@@ -10,6 +10,6 @@ def load():
         print("Loading...")
         print("Selamat datang di antarmuka \"Binomo\"")
     else:
-        print("Folder \""+ str(dir) +"\" tidka ditemukan.")
+        print("Folder \""+ str(dir) +"\" tidak ditemukan.")
 if __name__ == "__main__":
     load()
