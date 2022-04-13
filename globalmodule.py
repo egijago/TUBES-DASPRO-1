@@ -15,9 +15,6 @@ def split(string) :
             i += 1
     return newlist
 
-input = str(input("input string : "))
-print(split(input))
-
 # csv to matrix 
 def read(csv):
     dataset= open(str(csv))
