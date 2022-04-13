@@ -18,16 +18,6 @@ def split(string) :
 input = str(input("input string : "))
 print(split(input))
 
-
-# gameId
-def gameId(number) :
-    if (number // 10 == 0) :
-        return ("GAME00" + str(number))
-    if (1 <= number // 10 <= 9) :
-        return ("GAME0" + str(number))
-    if (10 <= number // 10) :
-        return ("GAME" + str(number))
-
 # csv to matrix 
 def read(csv):
     dataset= open(str(csv))
