@@ -1,15 +1,15 @@
 
 # len
-def findlength(string) :
+def length(string) :
     length = 0
     for i in string :
         length += 1
     return length 
 
-# split 
+# split string into character
 def split(string) :
     newlist = []
-    for i in range(findlength(string)) :
+    for i in range(find(string)) :
         if (string[i] != '') :
             newlist += string[i]
             i += 1
