@@ -3,7 +3,7 @@
 # from riwayat import *; from help import *; from load import *; from save import *; from exit import *
 
 from load import *
-from  import *
+from  quit import *
 
 def main():
     load()
