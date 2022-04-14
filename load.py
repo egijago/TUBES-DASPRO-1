@@ -40,8 +40,8 @@ def load():
     global userDs, gameDs, riwayatDs, kepemilikanDs
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("dir", help="Nama foldernya")
-    dir = parser.parse_args().folder
+    parser.add_argument("dir", help="Directory name")
+    dir = parser.parse_args().dir
     path = str(os.getcwd()) + "\\" + dir
     if os.path.exists(dir):
         os.chdir(path)
@@ -55,6 +55,6 @@ def load():
         print("Selamat datang di antarmuka \"Binomo\"")
     else:
         print("Folder \""+ str(dir) +"\" tidak ditemukan.")
-        
+
 if __name__ == "__main__":
     load()
