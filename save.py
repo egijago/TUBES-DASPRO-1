@@ -5,6 +5,7 @@ def save():
     if not os.path.exists(dir):
         os.makedirs(dir)
     os.chdir(dir)
-    for type in ["user","game","kepemilikan","riwayat"]:
-        file = open(str(type)+".csv",'w+',newline = '')
+    print("Saving...")
+    
+    
         
