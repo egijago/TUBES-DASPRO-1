@@ -47,7 +47,7 @@ def login(data_user, currentState) :
             print("Password atau username salah atau tidak ditemukan")
             inputUsername = input("Masukkan username : ")
             inputPassword = input("Masukkan password : ")
-        if module.length(inputUsername) == 0 or module.length(inputPassword) :
+        if module.length(inputUsername) == 0 or module.length(inputPassword) == 0 :
             print("Mohon masukkan password dan username Anda")
             inputUsername = input("Masukkan username : ")
             inputPassword = input("Masukkan password : ")
