@@ -4,7 +4,6 @@
 biar estetik
 
 ![alt.text](https://github.com/egijago/-/blob/main/1649952676034.jpg)
-![alt.text](https://github.com/egijago/-/blob/main/1649952675988.jpg)
-![alt.text](https://github.com/egijago/-/blob/main/1649952676932.jpg)
-![alt.text](https://github.com/egijago/-/blob/main/1649952676915.jpg)
-![alt.text](https://github.com/egijago/-/blob/main/1649952676903.jpg)
+![alt.text](https://github.com/egijago/-/blob/main/1649952675932.jpg)
+![alt.text](https://github.com/egijago/-/blob/main/1649952675915.jpg)
+![alt.text](https://github.com/egijago/-/blob/main/1649952675903.jpg)
