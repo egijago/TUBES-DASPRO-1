@@ -16,18 +16,30 @@ def split(string) :
     return newlist
 
 # csv to matrix 
-def read(csv):
-    dataset= open(str(csv)+".csv").readlines()
+def read(file):
+    # Fungsi read(csv)
+    # Menginisialisasikan matrix dari file.csv
+
+    # KAMUS LOKAL
+    # dataset :  array of str
+    # matrix : array of array of str
+    # arr : array of str
+    # word : str
+    # leter : char
+
+    # ALGORITMA
+    dataset= open(str(file)+".csv").readlines()
     matrix = []
     for row in dataset:
         arr = []
         word = ''
         for letter in row:
-            if letter != ';':
-                word += letter
-            else:
-                arr += [word]
-                word = ''
-        matrix += arr
+            if letter != '"':
+                if letter != ';':
+                    word += letter
+                else:
+                    arr += [word]
+                    word = ''
+        matrix += [arr]
     return matrix
 
