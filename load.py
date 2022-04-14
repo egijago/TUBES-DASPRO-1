@@ -55,7 +55,6 @@ def load():
         print("Selamat datang di antarmuka \"Binomo\"")
     else:
         print("Folder \""+ str(dir) +"\" tidak ditemukan.")
-    return (userDs, gameDs, riwayatDs, kepemilikanDs)
    
 
 if __name__ == "__main__":

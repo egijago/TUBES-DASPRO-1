@@ -1,12 +1,12 @@
-# import register; import login; import tambah_game; import ubah_game; import ubah_stok; import list_game_toko();
-# import buy_game; import list_game; import search_my_game; import search_game_at_store(); import topup
-# import riwayat; import help; import load; import save; import exit
+# from register import *; from login import *; from tambah_game import *; from ubah_game import *; from ubah_stok import *; from list_game_toko() import *;
+# from buy_game import *; from list_game import *; from search_my_game import *; from search_game_at_store() import *; from topup import *
+# from riwayat import *; from help import *; from load import *; from save import *; from exit import *
 
 from load import *
 
-
 def main():
-    userDs, gameDs, riwayatDs, kepemilikanDs = load()
+    load()
+    from load import userDs, gameDs, riwayatDs, kepemilikanDs
     # cont = True
     # while cont:
     #     cmd = input()
