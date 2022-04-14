@@ -1,6 +1,7 @@
 import argparse
 import os
 
+
 def read(file):
     # Fungsi read(csv)
     # Menginisialisasikan matrix dari file.csv
@@ -29,7 +30,7 @@ def read(file):
     return matrix
 
 def load():
-    # Fungsi Load()
+    # Prosedure load()
     # Melakukan loading data yang akan digunakan pada aplikasi
     
     # KAMUS LOKAL
@@ -37,8 +38,7 @@ def load():
     # dir, path : str
 
     # ALGORITMA
-    global userDs, gameDs, riwayatDs, kepemilikanDs
-
+    global userDs; global gameDs; global riwayatDs; global kepemilikanDs
     parser = argparse.ArgumentParser()
     parser.add_argument("dir", help="Directory name")
     dir = parser.parse_args().dir
@@ -55,6 +55,9 @@ def load():
         print("Selamat datang di antarmuka \"Binomo\"")
     else:
         print("Folder \""+ str(dir) +"\" tidak ditemukan.")
+    return (userDs, gameDs, riwayatDs, kepemilikanDs)
+   
 
 if __name__ == "__main__":
     load()
+    print(userDs)
