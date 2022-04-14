@@ -20,12 +20,11 @@ def read(file):
         arr = []
         word = ''
         for letter in row:
-            if letter != '"':
-                if letter != ';':
-                    word += letter
-                else:
-                    arr += [word]
-                    word = ''
+            if letter != ';':
+                word += letter
+            else:
+                arr += [word]
+                word = ''
         matrix += [arr]
     return matrix
 
