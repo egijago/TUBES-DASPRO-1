@@ -37,15 +37,20 @@ def searchLoginId(data_user, inputUsername):
         if (inputUsername == data_user[i + 1][2]):
             id = data_user[i + 1][0]
     return int(id)
-
+  
 def login(data_user, currentState) :
     inputUsername = input("Masukkan username : ")
     inputPassword = input("Masukkan password : ")
 
     while not isUsernameAvail(inputUsername, data_user) or not isPasswordValid(inputUsername, inputPassword, data_user):
-        print("Password atau username salah atau tidak ditemukan")
-        inputUsername = input("Masukkan username : ")
-        inputPassword = input("Masukkan password : ")
+        if inputUsername != '' and inputPassword != '' :
+            print("Password atau username salah atau tidak ditemukan")
+            inputUsername = input("Masukkan username : ")
+            inputPassword = input("Masukkan password : ")
+        if module.length(inputUsername) == 0 or module.length(inputPassword) :
+            print("Mohon masukkan password dan username Anda")
+            inputUsername = input("Masukkan username : ")
+            inputPassword = input("Masukkan password : ")
 
     print(f'Halo {data_user[searchLoginId(data_user, inputUsername)][1]}! Selamat datang di "Binomo".')
 
@@ -56,4 +61,3 @@ print(binomoAccess)
 binomoAccess = login(data_user, binomoAccess)
 print(binomoAccess)
 # if (currentState[4] == "admin"):
-    
