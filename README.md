@@ -4,4 +4,4 @@
 
 biar estetik
 
-![alt.text](https://ibb.co/9H5SGMW)
+![alt.text](https://github.com/egijago/-/kucing.webp?raw=true)
