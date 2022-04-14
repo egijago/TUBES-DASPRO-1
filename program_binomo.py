@@ -3,13 +3,14 @@
 # from riwayat import *; from help import *; from load import *; from save import *; from exit import *
 
 from load import *
+from  import *
 
 def main():
     load()
     from load import userDs, gameDs, riwayatDs, kepemilikanDs
-    # cont = True
-    # while cont:
-    #     cmd = input()
+    cont = True
+    while cont:
+        cmd = input()
         # if cmd.lower() == ("register"):
         #     register()
         # elif cmd.lower() == ("login"):
@@ -40,10 +41,12 @@ def main():
         #     load()
         # elif cmd.lower == ("save") : 
         #     save()
-        # elif cmd.lower() == ("exit"):
-        #     cont = False
+        # el
+        if cmd.lower() == ("exit"):
+            cont = False
         
-    # exit()
+    exit()
 
 if __name__ == "__main__":
     main()
+
