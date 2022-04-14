@@ -4,4 +4,4 @@
 
 biar estetik
 
-![](kucing.webp)
+![](https://ibb.co/9H5SGMW)
