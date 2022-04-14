@@ -1,5 +1,5 @@
 import os
-import csv
+
 def save():
     dir = input("Masukkan nama folder penyimpanan")
     if not os.path.exists(dir):
@@ -7,5 +7,5 @@ def save():
     os.chdir(dir)
     print("Saving...")
     
-    
+
         
