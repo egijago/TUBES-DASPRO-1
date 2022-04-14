@@ -17,7 +17,7 @@ def split(string) :
 
 # csv to matrix 
 def read(csv):
-    dataset= open(str(csv)+".csv"_.readlines()
+    dataset= open(str(csv)+".csv").readlines()
     matrix = []
     for row in dataset:
         arr = []
@@ -28,6 +28,6 @@ def read(csv):
             else:
                 arr += [word]
                 word = ''
-        arr += matrix
+        matrix += arr
     return matrix
 
