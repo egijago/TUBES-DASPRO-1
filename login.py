@@ -25,22 +25,11 @@ def isPasswordValid(inputUsername, inputPassword, data_user) :
     for i in range(module.length(data_user) - 1):
         if (data_user[i + 1][2]):
             userTemp = data_user[i + 1]
-
-    # for i in data_user :
-    #     if i[3] == inputPassword :
-    #         passwordValid += 1
-    #     else :
-    #         pass
-
+            
     if (inputPassword == userTemp[3]):
         return True
     else:
         return False
-    
-    # if passwordValid != 0 :
-    #     return True
-    # else :
-    #     return False
 
 def searchLoginId(data_user, inputUsername):
     id = 0
@@ -57,8 +46,6 @@ def login(data_user, currentState) :
         print("Password atau username salah atau tidak ditemukan")
         inputUsername = input("Masukkan username : ")
         inputPassword = input("Masukkan password : ")
-
-    
 
     print(f'Halo {data_user[searchLoginId(data_user, inputUsername)][1]}! Selamat datang di "Binomo".')
 
