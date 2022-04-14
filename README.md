@@ -4,4 +4,4 @@
 
 biar estetik
 
-![](https://ibb.co/9H5SGMW)
+![](https://postimg.cc/PNFJxgfx)
