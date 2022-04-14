@@ -1,5 +1,23 @@
 import os
+from datetime import datetime, date
 
+def f(time):
+    # Fungsi f(time)
+    # Memperbaiki format penulisan waktu (time) agar tepat 2 digit
+
+    # KAMUS LOKAL
+    # count : int
+    # let : char
+
+    # ALGORITMA
+    count = 0
+    for let in str(time):
+        count+=1 
+    if count < 2 :
+        return f("0"+str(time))
+    else: 
+        return str(time)
+    
 def save():
     # Prosedur save()
     # Menyimpan perubahan dalam csv
@@ -16,6 +34,9 @@ def save():
 
     ds = ["game","kepemilikan","riwayat","user"]
     dir = input("Masukkan nama folder penyimpanan: ")
+    if dir == "":
+        dt = datetime.today()
+        dir = str(date.today()) + "_" + f(dt.hour) + f(dt.minute) + f(dt.second)
     if not os.path.exists(dir):
         os.makedirs(dir)
         os.chdir(dir)

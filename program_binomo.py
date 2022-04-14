@@ -6,6 +6,13 @@ from load import *
 from  exit import *
 
 def main():
+    # Program Binomo
+    # Menjalankan program_binomo sesuai spesifikasi
+
+    # KAMUS
+    # userDs , gameDs, riwayatDs, kepemilikanDs : array of array of str
+
+    # ALGORITMA
     load()
     from load import userDs, gameDs, riwayatDs, kepemilikanDs
     cont = True
