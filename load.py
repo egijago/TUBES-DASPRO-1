@@ -52,6 +52,7 @@ def load():
         riwayatDs = read("riwayat")
         kepemilikanDs = read("kepemilikan")
         print("Selamat datang di antarmuka \"Binomo\"")
+        os.chdir("..")
     else:
         print("Folder \""+ str(dir) +"\" tidak ditemukan.")
    
