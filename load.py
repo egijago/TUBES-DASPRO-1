@@ -11,7 +11,7 @@ def read(file):
     # matrix : array of array of str
     # arr : array of str
     # word : str
-    # leter : char
+    # letter : char
 
     # ALGORITMA
     dataset= open(str(file)+".csv").readlines()
