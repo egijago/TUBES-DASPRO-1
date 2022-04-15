@@ -58,6 +58,5 @@ def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id): # NO
                 # NOTE: For the moment solution to solve stated problem in the first NOTE of this function. Change at later date
                 ownership_mtrx += [store_mtrx[chosen_game_idx][0],user_mtrx[chosen_user_idx][0]]
                 history_mtrx += [store_mtrx[chosen_game_idx][0],store_mtrx[chosen_game_idx][1],store_mtrx[chosen_game_idx][4],user_mtrx[chosen_user_idx][0],current_year]
-                
             else:
                 print('Saldo anda tidak cukup untuk membeli Game tersebut')
