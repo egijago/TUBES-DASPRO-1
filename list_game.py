@@ -1,7 +1,7 @@
 # Spesifikasi Program F09 - Melihat Game yang dimiliki
 import module
 
-def games_user_buoght(store_mtrx, ownership_mtrx, user_id):
+def games_user_bought(store_mtrx, ownership_mtrx, user_id):
     # Fungsi yang mengembalikan game-game yang dimiliki user
     # Input : store_mtrx            : array of array of str     ( Data dari file "game.csv" )
     #         ownership_mtrx        : array of array of str     ( Data dari file "kepemilikan.csv" )
@@ -42,7 +42,7 @@ def list_game(store_mtrx, ownership_mtrx, user_id):
     # buoght_game_length    : int                       ( Panjang matriks bought_game )
 
     # ALGORITMA
-    bought_game = games_user_buoght(store_mtrx, ownership_mtrx, user_id)
+    bought_game = games_user_bought(store_mtrx, ownership_mtrx, user_id)
     bought_game_length = module.length(bought_game)
 
     if bought_game_length == 1:
