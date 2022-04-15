@@ -14,7 +14,7 @@ def riwayat(store_mtrx, ownership_mtrx, user_id, history_mtrx):
     # user_buy_history  : array of array of str         ( Variabel menyimpan riwayat pembelian game yang dimiliki user )
 
     # ALGORITMA
-    bought_games = list_game.games_user_buoght(store_mtrx, ownership_mtrx, user_id)
+    bought_games = list_game.games_user_bought(store_mtrx, ownership_mtrx, user_id)
 
     user_buy_history = [['' for i in range(4)]]
     for games in bought_games:
