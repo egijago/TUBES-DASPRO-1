@@ -121,7 +121,7 @@ def max_length(my_mtrx, header_idx):
     return length_bound
 
 def matrix_print(my_mtrx, header_list):
-    # Fungsi untuk print matrix menjadi suatu tabel
+    # Prosedur untuk print matrix menjadi suatu tabel
     # Input: my_mtrx    : array of array of str
     #        header_list: array of int              (List yang menyimpan indeks elemen my_mtrx untuk di print)
     # Output: String    (Bentuk tabel)
