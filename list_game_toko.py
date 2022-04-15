@@ -1,7 +1,7 @@
 # Spesifikasi Program F07 - Listing Game di Toko Berdasarkan ID, Tahun Rilis dan Harga
 import module
 
-def list_game(my_mtrx):
+def list_game_toko(my_mtrx):
     # Prosedur untuk list game di toko berdasarkan ID atau Tahun Rilis atau Harga
     # Input: my_mtrx       : array of array of str
 
