@@ -2,17 +2,20 @@
 import module
 
 def list_game(store_mtrx, ownership_mtrx, user_id):
-    # Prosedur untuku list game yang dimiliki user
-    # Input : store_mtrx        : array of array of str
-    #         ownership_mtrx    : array of array of str
-    #         user_id           : str
+    # Prosedur untuku list game yang dimiliki user dan fungsi yang mengembalikan game-game yang dimiliki user
+    # Input : store_mtrx            : array of array of str
+    #         ownership_mtrx        : array of array of str
+    #         user_id               : str
+    # Output: bought_game_by_user   : array of array of stsr
     
     # KAMUS LOKAL
-
+    # store_length          : int                       ( Pangjan matriks store )
+    # user_game_id          : array of int              ( Menyimpan idx games yang dimiliki user di store )
+    # games                 : str                       ( Untuk pengulangan )
+    # store_idx             : int                       ( Untuk pengulangan )
 
     # ALGORITMA
     store_length = module.length(store_mtrx)
-    ownership_length = module.length(ownership_mtrx)
     user_game_id = []
 
     for games in ownership_mtrx:
@@ -25,8 +28,10 @@ def list_game(store_mtrx, ownership_mtrx, user_id):
     if user_game_id == []:
         print('Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.')
     else:    
-        mtrx_to_print = [['' for i in range(5)]]
+        bought_game_by_user = [['' for i in range(5)]]
         for store_idx in user_game_id:
-            mtrx_to_print += [store_mtrx[store_idx][0],store_mtrx[store_idx][1],store_mtrx[store_idx][2],store_mtrx[store_idx][3],store_mtrx[store_idx][4]]
+            bought_game_by_user += [store_mtrx[store_idx][0],store_mtrx[store_idx][1],store_mtrx[store_idx][2],store_mtrx[store_idx][3],store_mtrx[store_idx][4]]
         print('Daftar game:')
-        module.matrix_print(mtrx_to_print, [0,1,2,3,4])
+        module.matrix_print(bought_game_by_user, [0,1,2,3,4])
+    
+    return bought_game_by_user
