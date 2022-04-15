@@ -3,8 +3,8 @@ import module
 
 def games_user_buoght(store_mtrx, ownership_mtrx, user_id):
     # Fungsi yang mengembalikan game-game yang dimiliki user
-    # Input : store_mtrx            : array of array of str
-    #         ownership_mtrx        : array of array of str
+    # Input : store_mtrx            : array of array of str     ( Data dari file "game.csv" )
+    #         ownership_mtrx        : array of array of str     ( Data dari file "kepemilikan.csv" )
     #         user_id               : str
     # Output: bought_game_by_user   : array of array of str
     
