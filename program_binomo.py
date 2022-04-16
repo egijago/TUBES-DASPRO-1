@@ -17,12 +17,14 @@ def main():
 
     # ALGORITMA
     userDs, gameDs, riwayatDs, kepemilikanDs = load()
+    userArr = []
     cont = True
     while cont:
         cmd = input()
         # if cmd.lower() == ("register"):
         #     userDs = register(userDs)
         # elif cmd.lower() == ("login"):
+            # userArr = login()
             
         # elif cmd.lower() == ("tambah_game"):
         #     tambah_game()

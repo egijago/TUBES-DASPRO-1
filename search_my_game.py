@@ -27,13 +27,17 @@ def search_my_game(userArr, kepemilikanDs, gameDs):
             owned += gameId
 
     # Menampilkan game yang dimiliki yang sesuai degan kriteria
+    isNothingPrinted = True
     for game_id in owned: 
         for [id,nama,kategori,tahun_rilis,harga,stok] in gameDs:
             if game_id == id: 
                 if isNullId : gameId == id
                 if isNullRls : gameRls == tahun_rilis
                 if gameId == id and gameRls == tahun_rilis:
+                    isNothingPrinted = False
                     print(f"{id} | {uni(nama,25)} | {uni(harga,8)} | {uni(kategori,8)} | {uni(tahun_rilis,4)}")
+    if isNothingPrinted :
+        print("Tidak ada game pada inventory-mu yang memenuhi kriteria")
     
 if __name__ == "__main__":
     search_my_game()

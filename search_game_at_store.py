@@ -14,7 +14,7 @@ def search_game_at_store(gameDs):
     gameRls = input("Masukkan Tahun Rilis Game: ")
     isNullRls = gameRls == ""
     
-    
+    isNothingPrinted = True
     for [id,nama,kategori,tahun_rilis,harga,stok] in gameDs:
         if isNullId : gameId = id
         if isNullName  : gameName = nama
@@ -24,6 +24,8 @@ def search_game_at_store(gameDs):
 
         if gameId == id and gameName == nama and gamePrc == harga and gameCtg == kategori and gameRls == tahun_rilis:
             print(f"{id} | {uni(nama,40)} | {uni(harga,8)} | {uni(kategori,15)} | {uni(tahun_rilis,4)} | {stok}") 
+            isNothingPrinted = False
+        if isNothingPrinted : print("Tidak ada game pada toko yang memenuhi kriteria")
 
 if __name__ == "__main__":
     search_game_at_store()
