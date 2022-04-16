@@ -1,6 +1,6 @@
 from save import *
 
-def exit():
+def exit(userDs, gameDs, riwayatDs, kepemilikanDs):
     # Prosedur exit()
     # Memberhentikan / keluar dari program
 
@@ -12,7 +12,7 @@ def exit():
         choice = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n) ").lower()
         if choice == 'y' or choice == 'n':
             if choice.lower() == 'y':
-                save()
+                save(userDs, gameDs, riwayatDs, kepemilikanDs)
             break
             
 if __name__ == "__main__":
