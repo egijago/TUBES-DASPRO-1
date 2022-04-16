@@ -1,11 +1,11 @@
 import module as module
+# data_game = [['id', 'nama', 'kategori', 'tahun rilis', 'harga', 'stok'], 
+#              ['G001', 'BNMO', 'Adventure', '2013', '120000', '2'], 
+#              ['G002', 'Barbie', 'Romance', '2020', '180000', '2']]
 
-data_game = [['id', 'nama', 'kategori', 'tahun rilis', 'harga', 'stok'], 
-             ['G001', 'BNMO', 'Adventure', '2013', '120000', '2'], 
-             ['G002', 'Barbie', 'Romance', '2020', '180000', '2']]
-
-def changeGame() :
-    global data_game
+def changeGame(gameDs) :
+    data_game = gameDs
+    # global data_game
     gameId = input("Masukkan ID game : ")
     inputGame = input("Masukkan nama game : ")
     inputKategori = input("Masukkan kategori : ")
@@ -58,5 +58,5 @@ def isIdValid(gameId) :
     else :
         return False
 
-changeGame()
-print(data_game)
+if __name__ == "__main__":
+    changeGame()

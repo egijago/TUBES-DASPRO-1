@@ -37,7 +37,7 @@ def load():
     # dir, path : str
 
     # ALGORITMA
-    global userDs; global gameDs; global riwayatDs; global kepemilikanDs
+    # global userDs; global gameDs; global riwayatDs; global kepemilikanDs
     parser = argparse.ArgumentParser()
     parser.add_argument("dir", help="Directory name")
     dir = parser.parse_args().dir
@@ -55,8 +55,7 @@ def load():
         os.chdir("..")
     else:
         print("Folder \""+ str(dir) +"\" tidak ditemukan.")
-   
+    return (userDs,gameDs,riwayatDs,kepemilikanDs)
 
 if __name__ == "__main__":
     load()
-    print(userDs)

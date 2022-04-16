@@ -1,9 +1,11 @@
-# from register import *; from login import *; from tambah_game import *; from ubah_game import *; from ubah_stok import *; from list_game_toko() import *;
-# from buy_game import *; from list_game import *; from search_my_game import *; from search_game_at_store() import *; from topup import *
-# from riwayat import *; from help import *; from load import *; from save import *; from exit import *
+from register import *; from login import *; from tambahgame import *; from ubahgame import *; from ubah_stok import *; from list_game_toko import *;
+from buy_game import *; from list_game import *; from search_my_game import *; from search_game_at_store() import *; from topupsaldo import *
+from riwayat import *; from help import *; from load import *; from save import *; from exit import *
+
 
 from load import *
 from  exit import *
+
 
 def main():
     # Program Binomo
@@ -13,15 +15,14 @@ def main():
     # userDs , gameDs, riwayatDs, kepemilikanDs : array of array of str
 
     # ALGORITMA
-    load()
-    from load import userDs, gameDs, riwayatDs, kepemilikanDs
+    userDs, kepemilikanDs, riwayatDs, kepemilikanDs = load()
     cont = True
     while cont:
         cmd = input()
-        # if cmd.lower() == ("register"):
-        #     register()
-        # elif cmd.lower() == ("login"):
-        #     login()
+        if cmd.lower() == ("register"):
+            userDs = register(userDs)
+        elif cmd.lower() == ("login"):
+            
         # elif cmd.lower() == ("tambah_game"):
         #     tambah_game()
         # elif cmd.lower() == ("ubah_game"):

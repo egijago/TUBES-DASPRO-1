@@ -1,11 +1,13 @@
 import module as module
+# from program_binomo import userDs
+# data_user = userDs
+# data_user = [['id', 'nama', 'username', 'password', 'role', 'saldo'], 
+#              ['1', 'raisya', 'raisyanath', '123', 'user', '100000'], 
+#              ['2', 'keanna', 'lunarchronne', '123', 'user', '100000']]
 
-data_user = [['id', 'nama', 'username', 'password', 'role', 'saldo'], 
-             ['1', 'raisya', 'raisyanath', '123', 'user', '100000'], 
-             ['2', 'keanna', 'lunarchronne', '123', 'user', '100000']]
-
-def Register() :
-    global data_user
+def register(userDs) :
+    # global data_user
+    data_user = userDs
     inputNama = str(input("Masukkan nama : "))
     inputUsername = str(input("Masukkan username: "))
     inputPassword = str(input("Masukkan password : "))
@@ -27,6 +29,7 @@ def Register() :
     id = module.length(data_user)
     data_user = data_user + [id+1, inputNama, inputUsername, inputPassword, 'user', '0']
     print(f'Username {inputUsername} telah berhasil register ke dalam "Binomo"')
+    return data_user
 
 def isUsernameValid(inputUsername) :
     validCharacters = ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F','f', 'G', 'g', 'H', 'h', 'I', 'i', 'J',
@@ -63,6 +66,8 @@ def isAlreadyUsed(inputUsername) :
     else :
         return False
 
- 
-Register()
-print(data_user)
+
+if __name__ == "__main__":
+    register()
+# Register()
+# print(data_user)

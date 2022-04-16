@@ -1,8 +1,8 @@
 import module as module
 
-data_game = [['id', 'nama', 'kategori', 'tahun rilis', 'harga', 'stok'], 
-             ['G001', 'BNMO', 'Adventure', '2013', '120000', '2'], 
-             ['G002', 'Barbie', 'Romance', '2020', '180000', '2']]
+# data_game = [['id', 'nama', 'kategori', 'tahun rilis', 'harga', 'stok'], 
+#              ['G001', 'BNMO', 'Adventure', '2013', '120000', '2'], 
+#              ['G002', 'Barbie', 'Romance', '2020', '180000', '2']]
 
 def isAllFilled(parameter) :
     if (module.length(parameter) == 0 ) :
@@ -18,8 +18,8 @@ def gameId(idGame) :
     if (10 <= idGame // 10) :
         return ("G" + str(idGame))
 
-def TambahGame() :
-    global data_game
+def TambahGame(gameDs) :
+    data_game = gameDs
     inputGame = str(input("Masukkan nama game : "))
     inputKategori = str(input("Masukkan kategori : "))
     inputTahunRilis = str(input("Masukkan tahun rilis : "))
@@ -45,7 +45,7 @@ def TambahGame() :
             arrayGame = [idGame, inputGame, inputKategori, inputTahunRilis, inputHarga, inputStok]
     
     data_game += arrayGame
-    return data_game
 
-TambahGame()
-print(data_game)
+if __name__ == "__main__":
+    TambahGame()
+
