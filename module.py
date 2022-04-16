@@ -161,3 +161,13 @@ def matrix_print(my_mtrx, header_list):
                     print(space_category, end=' ')
                 elif idx == 4:
                     print(space_price, end=' ')
+
+def uni(str,n):
+    newStr=""
+    if length(str) > n :
+        newStr = str[:n-3] + "..."
+    else:
+        newStr = str
+        for i in range (n-length(str)):
+            newStr+=' '
+    return newStr
