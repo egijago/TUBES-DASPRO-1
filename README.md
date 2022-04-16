@@ -8,22 +8,22 @@
 
 * [Laporan](https://docs.google.com/document/d/1s_UySRMJrCrNWzUU9hruQbcqs4HriJKP2vFcl5C6KOU/edit?usp=sharing)
 * F01 Dekomposisi, Abstraksi...
-* F02 register
-* F03 login
-* F04 tambah_game
-* F05 ubah_game
-* F06 ubah_stok
-* F07 list_game_toko
-* F08 buy_game
-* F09 list_game
-* F10 search_my_game
-* F11 search_game_at_store
-* F12 topup
-* F13 riwayat
-* F14 help
-* F15 load
-* F16 save
-* F17 exit 
+* F02 register (on-progress)
+* F03 login (on-progress)
+* F04 tambah_game (on-progress)
+* F05 ubah_game (on-progress)
+* F06 ubah_stok (on-progress)
+* F07 list_game_toko (on-progress)
+* F08 buy_game (on-progress)
+* F09 list_game (on-progress)
+* F10 search_my_game (done)
+* F11 search_game_at_store (done)
+* F12 topup (on-progress)
+* F13 riwayat (on-progress)
+* F14 help 
+* F15 load (done)
+* F16 save (done)
+* F17 exit (done)
 
 <p>&nbsp;</p>
 
