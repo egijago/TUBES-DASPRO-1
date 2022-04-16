@@ -22,3 +22,6 @@ def search_game_at_store(gameDs):
 
         if gameId == id and gameName == nama and gamePrc == harga and gameCtg == kategori and gameRls == tahun_rilis:
             print(f"{id} | {uni(nama,25)} | {uni(harga,8)} | {uni(kategori,8)} | {uni(tahun_rilis,4)} | {stok}") 
+
+if __name__ == "__main__":
+    search_game_at_store()

@@ -1,6 +1,6 @@
 from register import *; from login import *; from tambahgame import *; from ubahgame import *; from ubah_stok import *; from list_game_toko import *;
-from buy_game import *; from list_game import *; from search_my_game import *; from search_game_at_store() import *; from topupsaldo import *
-from riwayat import *; from help import *; from load import *; from save import *; from exit import *
+from buy_game import *; from list_game import *; from search_my_game import *; from search_game_at_store import *; from topupsaldo import *
+# from riwayat import *; from help import *; from load import *; from save import *; from exit import *
 
 
 from load import *
@@ -15,13 +15,13 @@ def main():
     # userDs , gameDs, riwayatDs, kepemilikanDs : array of array of str
 
     # ALGORITMA
-    userDs, kepemilikanDs, riwayatDs, kepemilikanDs = load()
+    userDs, gameDs, riwayatDs, kepemilikanDs = load()
     cont = True
     while cont:
         cmd = input()
         if cmd.lower() == ("register"):
             userDs = register(userDs)
-        elif cmd.lower() == ("login"):
+        # elif cmd.lower() == ("login"):
             
         # elif cmd.lower() == ("tambah_game"):
         #     tambah_game()
@@ -37,8 +37,8 @@ def main():
         #     list_game()
         # elif cmd.lower == ("search_my_game") : 
         #     search_my_game()
-        # elif cmd.lower == ("search_game_at_store") : 
-        #     search_game_at_store()
+        elif cmd.lower() == ("search_game_at_store") : 
+            search_game_at_store(gameDs)
         # elif cmd.lower == ("topup") : 
         #     topup()
         # elif cmd.lower == ("riwayat") : 
@@ -50,7 +50,7 @@ def main():
         # elif cmd.lower == ("save") : 
         #     save()
         # el
-        if cmd.lower() == ("exit"):
+        elif cmd.lower() == ("exit"):
             cont = False
         
     exit()
