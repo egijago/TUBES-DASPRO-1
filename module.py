@@ -163,6 +163,14 @@ def matrix_print(my_mtrx, header_list):
                     print(space_price, end=' ')
 
 def uni(str,n):
+    # Fungsi uni(str,n)
+    # Menyeragamkan panjang string str agar tepat n karakter
+
+    # KAMUS LOKAL
+    # str, newStr   : str
+    # n             : int 
+
+    # ALGORITMA
     newStr=""
     if length(str) > n :
         newStr = str[:n-3] + "..."
