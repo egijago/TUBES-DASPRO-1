@@ -3,12 +3,15 @@ from module import *
 def search_my_game(userArr, kepemilikanDs, gameDs):
     # Prosedur search_my_game
     # Mencari data game yang ada pada library user
+    # Input : userArr           : array of str              ( Data user yung sedang login )
+    #         kepemilikanDs     : array of array of str     ( Data dari file "kepemilikan.csv" )
+    #         gameDs            : array of array of str     ( Data dari file "game.csv" )
 
     # KAMUS LOKAL 
-    # userId : str
-    # gameId, gameRls : str
-    # isNullId, isNullRls : Bool
-    # owned : array of str
+    # userId              : str             (id user yang sedang login)
+    # gameId, gameRls     : str            
+    # isNullId, isNullRls : Bool            
+    # owned               : array of str    
 
     # ALGORITMA
     # Mengakses user id

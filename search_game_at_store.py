@@ -3,6 +3,14 @@ from module import *
 def search_game_at_store(gameDs):
     # Prosedur search_game_at_store
     # Mencari dan menampilkan data game 
+    # Input : gameDs        : array of array of str     ( Data dari file "game.csv" )
+
+    # KAMUS LOKAL
+    # IsNullId, IsNullName, IsNullCtg, IsNullRls    : bool
+    # gameId, gameName, gameCtg, gameRls            : str
+    # isNothingPrinted                              : bool
+
+    # ALGORITMA
     gameId = input("Masukkan ID Game: ")
     isNullId = gameId == ""
     gameName = input("Masukkan Nama Game: ")

@@ -45,7 +45,8 @@ def TambahGame(gameDs) :
             arrayGame = [idGame, inputGame, inputKategori, inputTahunRilis, inputHarga, inputStok]
     
     data_game += arrayGame
-
+    return gameDs
+    
 if __name__ == "__main__":
     TambahGame()
 

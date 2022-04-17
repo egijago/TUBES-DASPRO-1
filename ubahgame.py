@@ -12,8 +12,8 @@ def changeGame(gameDs) :
     inputTahunRilis = input("Masukkan tahun rilis : ")
     inputHarga = input("Masukkan harga : ")
 
-    while (isIdValid(gameId) == False) or module.length(gameId) == 0 :
-        if (isIdValid(gameId) == False)  :
+    while (isIdValid(gameId,data_game) == False) or module.length(gameId) == 0 :
+        if (isIdValid(gameId,data_game) == False)  :
             print("Tidak ada game dengan ID tersebut")
             gameId = input("Masukkan ID game : ")
             inputGame = input("Masukkan nama game : ")
@@ -43,7 +43,7 @@ def changeGame(gameDs) :
     print("Game telah berhasil diubah")
     return data_game
 
-def isIdValid(gameId) :
+def isIdValid(gameId,data_game) :
     sameid = 0
     
     for i in range (module.length(data_game)): 

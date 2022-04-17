@@ -2,7 +2,7 @@
 import module
 from datetime import date
 
-def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id): # NOTE : Ini cara track perubahan stock gamenya bagi si admin gmn? (Ask later)
+def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id): # NOTE : Ini cara track perubahan stock gamenya bagi si admin gmn? (Ask later), kalau sudah di save nnti di store di file csv jadi bisa di cek admin 
     # Prosedur jika user ingin membeli game
     # Input : store_mtrx        : array of array of str     ( Data dari file "game.csv" )
     #         ownership_mtrx    : array of array of str     ( Data dari file "kepemilikan.csv" )
@@ -60,3 +60,5 @@ def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id): # NO
                 history_mtrx += [store_mtrx[chosen_game_idx][0],store_mtrx[chosen_game_idx][1],store_mtrx[chosen_game_idx][4],user_mtrx[chosen_user_idx][0],current_year]
             else:
                 print('Saldo anda tidak cukup untuk membeli Game tersebut')
+
+    return (ownership_mtrx,history_mtrx)

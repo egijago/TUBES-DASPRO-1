@@ -38,7 +38,7 @@ def searchLoginId(data_user, inputUsername):
             id = data_user[i + 1][0]
     return int(id)
   
-def login(data_user, currentState) :
+def login(data_user) :
     inputUsername = input("Masukkan username : ")
     inputPassword = input("Masukkan password : ")
 
@@ -57,7 +57,7 @@ def login(data_user, currentState) :
     binomoAccess = data_user[searchLoginId(data_user, inputUsername)]
     return binomoAccess
 
-print(binomoAccess)
-binomoAccess = login(data_user, binomoAccess)
-print(binomoAccess)
+# print(binomoAccess)
+# binomoAccess = login(data_user, binomoAccess)
+# print(binomoAccess)
 # if (currentState[4] == "admin"):
