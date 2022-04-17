@@ -20,7 +20,7 @@
 * F11 search_game_at_store (done)
 * F12 topup (on-progress)
 * F13 riwayat (on-progress)
-* F14 help 
+* F14 help (done)
 * F15 load (done)
 * F16 save (done)
 * F17 exit (done)
