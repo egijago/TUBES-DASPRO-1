@@ -1,5 +1,7 @@
 import argparse
 import os
+from cipher import *
+from module import *
 
 
 def read(file):
@@ -51,6 +53,7 @@ def load():
         gameDs = read("game")
         riwayatDs = read("riwayat")
         kepemilikanDs = read("kepemilikan")
+        for i in range (length(userDs)) :  userDs[i][3] = decrypt(userDs[i][3],3,7) # decrypting
         print("Selamat datang di antarmuka \"Binomo\"")
         os.chdir("..")
     else:

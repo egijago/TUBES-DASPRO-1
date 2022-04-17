@@ -1,5 +1,7 @@
 import os
 from datetime import datetime, date
+from module import length
+from cipher import encrypt
 
 def func(time):
     # Fungsi f(time)
@@ -46,6 +48,8 @@ def save(userDs, gameDs, riwayatDs, kepemilikanDs):
             os.remove(type + ".csv")
 
     print("Saving...")
+    
+    for i in range (length(userDs)) :  userDs[i][3] = encrypt(userDs[i][3],3,7)
 
     for type in ds:
         with open(type + ".csv", "x") as f:
