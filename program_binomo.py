@@ -32,9 +32,9 @@ def main():
         if cmd.lower() == ("register"):
             userDs = register(userDs)
         elif cmd.lower() == ("login"):
-            userArr = login() 
+            userArr = login(userDs) 
         elif cmd.lower() == ("tambah_game"):
-            gameDs = tambah_game(gameDs)
+            gameDs = TambahGame(gameDs)
         elif cmd.lower() == ("ubah_game"):
             gameDs = changeGame(gameDs)
         elif cmd.lower == ("ubah_stok"):
