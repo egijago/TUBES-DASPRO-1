@@ -26,7 +26,7 @@
 * F17 exit (done)
 
 * B01 chiper (done)
-* B02 kerang ajaib (on progress)
+* B02 kerang ajaib (done)
 * B03 tic tac toe (done)
 
 <p>&nbsp;</p>
