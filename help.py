@@ -1,5 +1,5 @@
 
-def help(userArr):
+def help_(userArr):
     if userArr == []: 
         print("================================ HELP ================================")
         print("1. login - melakukan login kedalam sistem")
@@ -30,3 +30,8 @@ def help(userArr):
         print("8. help - menampilkan bantuan atau penjelasan terkait command yang ada")
         print("9. save - menyimpan perubahan yang telah dibuat")
         print("10.exit - keluar dari program")
+
+if __name__ == "__main__":
+    help_(userArr)
+
+# help_()

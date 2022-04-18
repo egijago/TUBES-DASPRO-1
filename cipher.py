@@ -45,7 +45,7 @@ def encrypt(word,n,x):
 
     # ALGORITMA
     global Arr
-    newArr = Arr[n:length(Arr)]+Arr[:n]
+    newArr = Arr[n%length(Arr):length(Arr)]+Arr[:n%length(Arr)]
     ord = []
     for i in range (length(word)):
         ord += [int(x) * i + findOrd(word[i],newArr)]
@@ -67,7 +67,7 @@ def decrypt(word,n,x):
 
     # ALGORITMA
     global Arr
-    newArr = Arr[n:length(Arr)]+Arr[:n]
+    newArr = Arr[n%length(Arr):length(Arr)]+Arr[:n%length(Arr)]
     word = word[length(word)-n%length(word):length(word)] + word[:length(word)-n%length(word)]
     ord = []
     for i in range (length(word)) : 
@@ -78,10 +78,10 @@ def decrypt(word,n,x):
         newWord += findChar(i,newArr) 
     return newWord
 
-# TESTING
+# # TESTING
 # from random import *
 # count = 0
-# for i in range (10000):
+# for i in range (1000):
 #     x = randint(1,100)
 #     y = randint(1,100)
 #     leng = randint(1,100)
@@ -97,4 +97,11 @@ def decrypt(word,n,x):
 #     if string != destring :
 #         count+=1
 # print(count)
+
+# from random import *
+
+# for i in range(100):
+#     x = randint(1,100)
+#     y = randint(1,100)
+#     print(encrypt("hello world",x,y))
 

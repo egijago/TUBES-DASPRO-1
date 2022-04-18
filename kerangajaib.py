@@ -26,4 +26,4 @@ def magicConchShell() :
     else :
         print("Tanya lagi nanti.")
 
-magicConchShell()
+# magicConchShell()
