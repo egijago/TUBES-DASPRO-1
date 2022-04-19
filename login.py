@@ -4,12 +4,12 @@ import module as module
 #              ['1', 'raisya', 'raisyanath', '123', 'user', '100000'], 
 #              ['2', 'keanna', 'lunarchronne', '123', 'user', '100000']]
 
-# binomoAccess = [None, None, None, None, 'guest', None]
+binomoAccess = [None, None, None, None, 'guest', None]
 
 def isUsernameAvail(inputUsername, data_user) :
     usernameAvail = 0
-    for i in data_user :
-        if i[1] == inputUsername :
+    for i in range(module.length(data_user) -1) :
+        if data_user[i+1][2] == inputUsername :
             usernameAvail += 1
         else :
             pass
@@ -22,23 +22,34 @@ def isUsernameAvail(inputUsername, data_user) :
 def isPasswordValid(inputUsername, inputPassword, data_user) :
 
     userTemp = []
-    for i in range(module.length(data_user)):
-        if (data_user[i][1]) == inputUsername:
-            userTemp = data_user[i]
-            
+    for i in range(module.length(data_user) - 1):
+        if (data_user[i + 1][2]):
+            userTemp = data_user[i + 1]
+
+    # for i in data_user :
+    #     if i[3] == inputPassword :
+    #         passwordValid += 1
+    #     else :
+    #         pass
+
     if (inputPassword == userTemp[3]):
         return True
     else:
         return False
+    
+    # if passwordValid != 0 :
+    #     return True
+    # else :
+    #     return False
 
 def searchLoginId(data_user, inputUsername):
     id = 0
-    for i in range(module.length(data_user)):
-        if (inputUsername == data_user[i][1]):
-            id = data_user[i][0]
+    for i in range(module.length(data_user) - 1):
+        if (inputUsername == data_user[i + 1][2]):
+            id = data_user[i + 1][0]
     return int(id)
-  
-def login(data_user) :
+
+def login(data_user, binomoAccess) :
     inputUsername = input("Masukkan username : ")
     inputPassword = input("Masukkan password : ")
 
@@ -52,7 +63,7 @@ def login(data_user) :
             inputUsername = input("Masukkan username : ")
             inputPassword = input("Masukkan password : ")
 
-    print(f'Halo {data_user[searchLoginId(data_user, inputUsername)][2]}! Selamat datang di "Binomo".')
+    print(f'Halo {data_user[searchLoginId(data_user, inputUsername)][1]}! Selamat datang di "Binomo".')
 
     binomoAccess = data_user[searchLoginId(data_user, inputUsername)]
     return binomoAccess
