@@ -25,14 +25,14 @@ def search_my_game(userArr, kepemilikanDs, gameDs):
 
     # Mencari daftar game yang dimiliki
     owned = []
-    for (game_id,user_id) in kepemilikanDs:
+    for [game_id,user_id] in kepemilikanDs:
         if user_id == userId:
             owned += gameId
 
     # Menampilkan game yang dimiliki yang sesuai degan kriteria
     isNothingPrinted = True
     for game_id in owned: 
-        for (id,nama,kategori,tahun_rilis,harga,stok) in gameDs:
+        for [id,nama,kategori,tahun_rilis,harga,stok] in gameDs:
             if game_id == id: 
                 if isNullId : gameId == id
                 if isNullRls : gameRls == tahun_rilis
