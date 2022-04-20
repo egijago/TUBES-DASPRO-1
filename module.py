@@ -26,17 +26,17 @@ def length(string) :
         length += 1
     return length 
 def isInWord(string,word):
-    if length(word)>= length(string):
-        for start in range (length(word)-length(string)):
+    string_length = length(string)
+    word_length = length(word)
+    result = False
+    if word_length >= string_length:
+        for start in range (word_length - string_length):
             newWord = ""
             for idx in range (start,length(word)):
                 newWord += word[idx]
             
-            result = True
-            for i in range (length(string)):
-                if string[i] != word[i]: result = False   
-            if result == True : return result
-            
+            if newWord == word:
+                result = True
     else:
         return False
     return result
