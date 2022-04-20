@@ -79,6 +79,7 @@ def decrypt(word,n,x):
     return newWord
 
 # # TESTING
+# # test encrypt decrypt
 # from random import *
 # count = 0
 # for i in range (1000):
@@ -100,6 +101,7 @@ def decrypt(word,n,x):
 
 # from random import *
 
+# # variasi
 # for i in range(100):
 #     x = randint(1,100)
 #     y = randint(1,100)
