@@ -18,7 +18,7 @@ def register(userDs) :
             inputNama = str(input("Masukkan nama : "))
             inputUsername = str(input("Masukkan username: "))
             inputPassword = str(input("Masukkan password : "))
-        elif isAlreadyUsed(inputUsername) :
+        elif isAlreadyUsed(inputUsername,data_user) :
             print(f'username {inputUsername} sudah terpakai, silakan menggunakan username lain')
             inputNama = str(input("Masukkan nama : "))
             inputUsername = str(input("Masukkan username: "))
@@ -52,11 +52,10 @@ def isUsernameValid(inputUsername) :
         return False
 
 
-def isAlreadyUsed(inputUsername) :
-    global data_user
+def isAlreadyUsed(inputUsername,data_user) :
     sameUsername = 0
     for i in data_user :
-        if i[2] == inputUsername :
+        if i[1] == inputUsername :
             sameUsername += 1
         else :
             pass
