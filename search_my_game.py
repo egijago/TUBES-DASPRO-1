@@ -26,16 +26,16 @@ def search_my_game(userArr, kepemilikanDs, gameDs):
     # Mencari daftar game yang dimiliki
     owned = []
     for [game_id,user_id] in kepemilikanDs:
-        if user_id == userId:
-            owned += gameId
+        if user_id == userId: owned += [game_id]
 
-    # Menampilkan game yang dimiliki yang sesuai degan kriteria
+    # Menampilkan game yang dimiliki yang sesuai dengan kriteria
     isNothingPrinted = True
     for game_id in owned: 
         for [id,nama,kategori,tahun_rilis,harga,stok] in gameDs:
             if game_id == id: 
-                if isNullId : gameId == id
-                if isNullRls : gameRls == tahun_rilis
+                print(game_id)
+                if isNullId : gameId = id
+                if isNullRls : gameRls = tahun_rilis
                 if gameId == id and gameRls == tahun_rilis:
                     isNothingPrinted = False
                     print(f"{id} | {uni(nama,25)} | {uni(harga,8)} | {uni(kategori,8)} | {uni(tahun_rilis,4)}")

@@ -4,7 +4,7 @@ from module import length
 from cipher import encrypt
 
 def func(time):
-    # Fungsi f(time)
+    # Fungsi func(time)
     # Memperbaiki format penulisan waktu (time) agar tepat 2 digit
 
     # KAMUS LOKAL
@@ -31,28 +31,35 @@ def save(userDs, gameDs, riwayatDs, kepemilikanDs):
     # row : array of str
     # str : str
     
-    #ALGORITMA
-    # from program_binomo import userDs, gameDs, riwayatDs, kepemilikanDs
-
+    # ALGORITMA
     ds = ["game","kepemilikan","riwayat","user"]
+
+    # input nama directory tempat penyimpanan file
     dir = input("Masukkan nama folder penyimpanan: ")
+    # jika input directory kosong, nama file merupakan waktu melakukan pengesavean
     if dir == "":
         dt = datetime.today()
         dir = str(date.today()) + "_" + func(dt.hour) + func(dt.minute) + func(dt.second)
+    # jika nama directory belum ada, maka dibuat directorynya
     if not os.path.exists(dir):
         os.makedirs(dir)
         os.chdir(dir)
+    # jika directory sudah ada, maka dihapus seluruh file dari save-an sebelumnya
     else:
         os.chdir(dir)
         for type in ds:
             os.remove(type + ".csv")
 
+    # agar estetik
     print("Saving...")
     
+    # sebelum di store di file, password di encrypt terlebih dahulu
     for i in range (length(userDs)) :  userDs[i][3] = encrypt(userDs[i][3],3,7)
 
+    # memasukkan setiap data yang masih dalam variabel ke file 
     for type in ds:
         with open(type + ".csv", "x") as f:
+            # locals() untuk mengubah string menjadi variable
             matrix = locals()[type + "Ds"]
             for row in matrix:
                 string = ""

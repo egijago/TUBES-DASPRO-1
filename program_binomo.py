@@ -3,6 +3,7 @@
 # from register import *; from login import *; from tambahgame import *; from ubahgame import *; from ubah_stok import *; from list_game_toko import *;
 # from buy_game import *; from list_game import *; from search_my_game import *; from search_game_at_store import *; from topupsaldo import *
 # from riwayat import *; from help import *; from load import *; from save import *; from exit import *
+from module import isInArr
 from tictactoe import tic_tac_toe
 
 
@@ -27,15 +28,15 @@ def main():
     userArr = [None, None, None, None, 'guest', None]
     cmdAdmin = ["register","tambah_game","ubah_game","ubah_stok","topup"]
     cmdUser = ["buy_game","list_game","search_my_game","riwayat"] 
-    cmdGuest = ["login","help"]  
-    cmdAdminAndUser = ["login","list_game_toko","search_game_at_store","help"]
+    cmdGuest = ["login","help","exit"]  
+    cmdAdminAndUser = ["login","list_game_toko","search_game_at_store","help","save","exit"]
     cont = True
     while cont:
         kontinu = False
         cmd = input()
-        if cmd in cmdAdmin or cmd in cmdUser or cmd in cmdAdminAndUser:
+        if isInArr(cmd,cmdAdmin) or isInArr(cmd,cmdUser) or isInArr(cmd,cmdAdminAndUser):
             if userArr[4] == "guest":
-                if cmd in cmdGuest : kontinu = True
+                if isInArr(cmd,cmdGuest) : kontinu = True
                 else: 
                     print("Maaf, anda harus login terlebih dahulu untuk mengirim perintah selain \"login\"")
                     cc = input("Apakah Anda mempunyai akun? (y/n) ")
@@ -46,34 +47,14 @@ def main():
                     else:
                         print("Masukan salah. ")
 
-            
-                # if cmd.lower() == ("login"):
-                #     userArr = login(userDs,userArr) 
-                # else: 
-                #     print("Maaf, anda harus login terlebih dahulu untuk mengirim perintah selain \"login\"")
-                    # lanjut = True
-                    # while lanjut :
-                    #     cc = input("Apakah Anda sudah memiliki akun? (y/n)")
-                    #     if cc.lower() == "y":
-                    #         lanjut = False
-                    #         userArr = login(userDs,userArr) 
-                    #     elif cc.lower() == "n":
-                    #         lanjut = False
-                    #         print("Silakan melakukan registrasi terlebih dahulu. ")
-                    #         userDs = register(userDs)
-                    #     else:
-                    #         print("Masukan salah. ")
-
             elif userArr[4] == "user" :
-                if (cmd in cmdUser or cmd in cmdAdminAndUser):
+                if (isInArr(cmd,cmdUser) or isInArr(cmd,cmdAdminAndUser)):
                     kontinu = True 
                 else: 
                     print("Maaf, Anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke Administrator untuk melakukan hal tersebut. ")
 
-            # else:
-            #     print("Maaf, Anda tidak memiliki izin untuk menjalankan perintah berikut. Mintalah ke Administrator untuk melakukan hal tersebut. ")
             elif userArr[4] == "admin" :
-                if (cmd in cmdAdmin or cmd in cmdAdminAndUser):
+                if (isInArr(cmd,cmdAdmin) or isInArr(cmd,cmdAdminAndUser)):
                     kontinu = True
                 else: 
                     print("Maaf, Anda harus menjadi user untuk melakukan hal tersebut. ")
@@ -115,8 +96,7 @@ def main():
                     tic_tac_toe()
         else:
             print("Perintah salah, masukkan perintah \"help\"")
-    exit(userDs, gameDs, riwayatDs, kepemilikanDs)
+    exit(userDs, gameDs, riwayatDs, kepemilikanDs, userArr[4])
 
 if __name__ == "__main__":
     main()
-

@@ -27,7 +27,7 @@ def read(file):
             else:
                 arr += [word]
                 word = ''
-        matrix += [arr]
+        if arr!=[]: matrix += [arr]
     return matrix
 
 def load():

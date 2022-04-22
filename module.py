@@ -3,43 +3,33 @@ def isInArr(elm,Arr):
         if element == elm: return True
     return False
 
-# def isInWord(string,word):
-#     if length(word)>= length(string):
-#         for start in range (length(word)-length(string)):
-#             newWord = ""
-#             for idx in range (start,length(word)):
-#                 newWord += word[idx]
-            
-#             result = True
-#             for i in range (length(string)):
-#                 if string[i] != word[i]: result = False
-            
-#     else:
-#         return False
-#     return result
+def findMax(arr):
+    max = arr[0]
+    for i in arr:
+        if i>max:
+         max = i 
+    return max 
 
-# print(isInWord("abc","fghfghabcdfgdfg"))
-#  len
+def findMin(arr):
+    min = arr[0]
+    for i in arr:
+        if i<min:
+            min = i
+    return min
+
 def length(string) :
     length = 0
     for i in string :
         length += 1
     return length 
-def isInWord(string,word):
-    string_length = length(string)
-    word_length = length(word)
-    result = False
 
-    if word_length >= string_length:
-        for start in range (word_length - string_length):
-            newWord = ""
-            for idx in range (start,length(word)):
+def isInWord(string,word):
+    for start in range (length(word)):
+        newWord = ""
+        for idx in range (start,length(word)):
                 newWord += word[idx]
-            
-                if newWord == string:
-                    result = True
-                    break
-    return result
+                if string == newWord: return True
+    return False
 
 # split string into character
 def split(string) :
