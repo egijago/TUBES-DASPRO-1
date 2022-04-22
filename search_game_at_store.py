@@ -1,8 +1,4 @@
-from audioop import findmax
-from tokenize import String
-from cipher import findOrd
-from module import *
-
+from module import*
 def search_game_at_store(gameDs):
     # Prosedur search_game_at_store
     # Mencari dan menampilkan data game 
@@ -33,74 +29,94 @@ def search_game_at_store(gameDs):
         if isNullCtg  : gameCtg = kategori
         if isNullRls  : gameRls = tahun_rilis
 
-        if gameId.lower() in id.lower() and gameName.lower() in nama.lower() and gamePrc.lower() in harga.lower() and gameCtg.lower() in kategori.lower() and gameRls.lower() in tahun_rilis.lower():
+        if isInWord(gameId.lower(),id.lower()) and isInWord(gameName.lower(), nama.lower()) and isInWord(gamePrc.lower(),harga.lower()) and isInWord(gameCtg.lower(),kategori.lower()) and isInWord(gameRls.lower(),tahun_rilis.lower()):
             print(f"{id} | {uni(nama,40)} | {uni(harga,8)} | {uni(kategori,11)} | {uni(tahun_rilis,4)} | {stok}") 
             isNothingPrinted = False
     if isNothingPrinted :
         search(gameName.lower(),[row[1] for row in gameDs] )
 
-def findMax(arr):
-    max = arr[0]
-    for i in arr:
-        if i>max:
-         max = i 
-    return max 
+def slice(word,start,end):
+    # Fungsi Slice
+    # Memotong string word dari index start sampai index end-1
 
-def findMin(arr):
-    min = arr[0]
-    for i in arr:
-        if i<min:
-            min = i
-    return min
+    # KAMUS LOKAL
+    # newWord       : str
+    # idx           : int
 
-def isIn(x,arr):
-    for i in arr:
-        if i == x : return True
-    return False
+    # ALGORITMA
+    newWord =""
+    for idx in range (start,end):
+        newWord+=word[idx]
+    return newWord
 
-# def comm(x,arr):
-#     count = 0
-#     for word in arr:
-#         for letter in word:
-#             if letter == x : count+=1
-#     return count
-def changeChar(idx,char,string):
-    return string[:idx]+str(char)+string[idx+1:]
+def noSpace(word):
+    # Fungsi No Space
+    # Menghilangkan space pada string word
 
+    # KAMUS LOKAL 
+    # newWord           : str
+    # i                 : int
+    
+    # ALGORITMA
+    newWord =''
+    for i in word:
+        if i!=" ": newWord+=i
+    return newWord
+def eval(string,word):
+    # Fungsi Eval
+    # Mengembalikan poin kecocokan antara string dan word
+
+    # KAMUS 
+    # string, word              : str
+    # # 
+    string = noSpace(string).lower() ;word = noSpace(word).lower()
+
+    # Menyamakan panjang string dan word
+    if length(string)>=length(word):
+        for i in range (length(string)-length(word)):word= '`' + word
+    else:
+        for i in range (length(word)-length(string)):string+= '~'
+
+    maxscore = 0
+    # iterasi penggeseran word ke kanan
+    for start in range (length(word)): 
+        newWord = slice(word,start,length(word)) + slice(word,0,start)
+        # menghitung skor dari tiap iterasi penggeseran word                                               
+        totalscore = 0
+        # iterasi pengecekan setiap huruf di string
+        for idString in range (length(string)):
+            score = 0
+            for idWord in range (length(newWord)):
+                # Mencari skor dari setiap huruf pada string sebagai fungsi posisi
+                if string[idString] == newWord[idWord] and abs(idString-idWord)<5 : 
+                    subScore = 1/(abs(idString-idWord)+1)
+                    if subScore >= score:score = subScore
+            totalscore += score
+        if totalscore > maxscore:maxscore = totalscore 
+    # mengembalikan nilai maksimum yang diperoleh dari skor pada tiap iterasi
+    return maxscore
 
 def search(string,arr):
-    scr = [ 0 for i in range (length(arr))]
-    for i in range (len(arr)):
-        # if length(arr[i])>length(string): minlen = length(string)
-        # else: minlen = length(arr[i])
-        maxwordscore = 0
-        for start in range (length(arr[i])-length(string)-1): 
-            wordscore = 0
-            word  = (arr[i][start:]+arr[i][:start]).lower()
-            for count in range (len(string)): 
-                if len(word) < len(string) : word +='`'
-            
-            for x in range (len(string)):
-                for y in range (len(word)):
-                    if string[x] == word[y] and x == y:  wordscore += 1
+    # Fungsi search
+    # Mencari word yang paling cocok dengan string di array arr
 
-            if wordscore > maxwordscore : maxwordscore = wordscore
-           
-        scr[i] = maxwordscore
+    # KAMUS 
+    # scr           : array of int
+    # idx           : array of int
+    # i             : int
+    
+    # ALGORITMA
 
+    # mencari skor dari setiap word di array arr
+    scr = [0 for i in range(length(arr))]
+    for idx in range(length(arr)):
+        scr[idx] = eval(string,arr[idx])
+
+    # mencari index dari word yang memiliki skor maksimal
     idx = []
     for i in range (len(scr)):
         if scr[i] == findMax(scr): idx += [i]
     
-    word = ""
+    # menampilkan word yang memiliki skor maksimal
     for i in range (len(idx)):
-        if i == len(idx)-1:
-            word += arr[idx[i]] 
-        else: 
-            word += arr[idx[i]] +" atau "
-
-    print(f"Apakah yang Anda maksud {word} ?")
-            
-# if __name__ == "__main__":
-#     search_game_at_store()
-
+        print(arr[idx[i]])
