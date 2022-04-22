@@ -82,20 +82,20 @@ def ascend_sort(my_mtrx,data_idx):
     mtrx_length = length(my_mtrx)
     temp_mtrx = my_mtrx
     if mtrx_length > 1:
-        check = 1
+        check = 0
         any_swap = True
 
-        while check <= mtrx_length - 1 and any_swap:
+        while check < mtrx_length and any_swap:
             any_swap = False
-            for idx in range(mtrx_length, check, -1):
-                if temp_mtrx[idx][data_idx] < temp_mtrx[idx - 1][data_idx]:
-                    temp_value = temp_mtrx[idx][data_idx]
-                    temp_mtrx[idx][data_idx] = temp_mtrx[idx - 1][data_idx]
-                    temp_mtrx[idx - 1][data_idx] = temp_value
+            for idx in range(mtrx_length - 1, check, -1):
+                if int(temp_mtrx[idx][data_idx]) < int(temp_mtrx[idx - 1][data_idx]):
+                    temp_value = temp_mtrx[idx]
+                    temp_mtrx[idx] = temp_mtrx[idx - 1]
+                    temp_mtrx[idx - 1] = temp_value
                     any_swap = True
 
-                elif temp_mtrx[idx][data_idx] < temp_mtrx[idx - 1][data_idx]:
-                    idx += 1
+                else:
+                    continue
             check += 1
     return temp_mtrx
 
@@ -113,25 +113,25 @@ def descend_sort(my_mtrx,data_idx):
     mtrx_length = length(my_mtrx)
     temp_mtrx = my_mtrx
     if mtrx_length > 1:
-        check = 1
+        check = 0
         any_swap = True
 
-        while check <= mtrx_length - 1 and any_swap:
+        while check < mtrx_length and any_swap:
             any_swap = False
-            for idx in range(mtrx_length, check, -1):
-                if temp_mtrx[idx][data_idx] > temp_mtrx[idx - 1][data_idx]:
-                    temp_value = temp_mtrx[idx][data_idx]
-                    temp_mtrx[idx][data_idx] = temp_mtrx[idx - 1][data_idx]
-                    temp_mtrx[idx - 1][data_idx] = temp_value
+            for idx in range(mtrx_length - 1, check, -1):
+                if int(temp_mtrx[idx][data_idx]) > int(temp_mtrx[idx - 1][data_idx]):
+                    temp_value = temp_mtrx[idx]
+                    temp_mtrx[idx] = temp_mtrx[idx - 1]
+                    temp_mtrx[idx - 1] = temp_value
                     any_swap = True
 
-                elif temp_mtrx[idx][data_idx] < temp_mtrx[idx - 1][data_idx]:
-                    idx += 1
+                else:
+                    continue
             check += 1
     return temp_mtrx
 
 def max_length(my_mtrx, header_idx):
-    # Fungsi untuk mencari jumlah karakter dari string  terpanjang di elemen matrix my_mtrx
+    # Fungsi untuk mencari jumlah karakter dari string  terpanjang di salah satu kategori matrix my_mtrx
     # Input : my_mtrx       : array of array of str
     #         header_idx    : int                       (indeks dari bagian elemen yang ingin dicari)
     # Output: length_bound  : int
@@ -142,8 +142,9 @@ def max_length(my_mtrx, header_idx):
     # ALGORITMA
     length_bound = 0
     for elements in my_mtrx:
-        if elements[header_idx] > length_bound:
-            length_bound = length(elements[header_idx])
+        curr_length = length(elements[header_idx])
+        if curr_length > length_bound:
+            length_bound = curr_length
     return length_bound
 
 def matrix_print(my_mtrx, header_list):
@@ -177,16 +178,16 @@ def matrix_print(my_mtrx, header_list):
         for i in range(price_char - length(my_mtrx[elements_idx][4])):
             space_price += ' '
 
-        print(f'{elements_idx + 1}. {my_mtrx[elements_idx][header_list[0]]} ', end='')
+        print(f'\n{elements_idx + 1}. {my_mtrx[elements_idx][header_list[0]]} ', end='')
         for idx in header_list:
             if idx > 0:
-                print(f'| {my_mtrx[elements_idx][idx]}', end='')
+                print(f'| {my_mtrx[elements_idx][idx]}', end=' ')
                 if idx == 1:
-                    print(space_game_name, end=' ')
+                    print(space_game_name, end='')
                 elif idx == 2:
-                    print(space_category, end=' ')
+                    print(space_category, end='')
                 elif idx == 4:
-                    print(space_price, end=' ')
+                    print(space_price, end='')
 
 def uni(str,n):
     # Fungsi uni(str,n)
