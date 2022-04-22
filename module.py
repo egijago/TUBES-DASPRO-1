@@ -29,19 +29,17 @@ def isInWord(string,word):
     string_length = length(string)
     word_length = length(word)
     result = False
+
     if word_length >= string_length:
         for start in range (word_length - string_length):
             newWord = ""
             for idx in range (start,length(word)):
                 newWord += word[idx]
             
-            if newWord == word:
-                result = True
-    else:
-        return False
+                if newWord == string:
+                    result = True
+                    break
     return result
-
-print(isInWord("abc","fghfghabcdfgdfg"))
 
 # split string into character
 def split(string) :
