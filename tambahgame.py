@@ -12,11 +12,11 @@ def isAllFilled(parameter) :
 
 def gameId(idGame) :
     if (idGame // 10 == 0) :
-        return ("G00" + str(idGame))
+        return ("GAME00" + str(idGame))
     if (1 <= idGame // 10 <= 9) :
-        return ("G0" + str(idGame))
+        return ("GAME0" + str(idGame))
     if (10 <= idGame // 10) :
-        return ("G" + str(idGame))
+        return ("GAME" + str(idGame))
 
 def TambahGame(gameDs) :
     data_game = gameDs
@@ -44,9 +44,6 @@ def TambahGame(gameDs) :
         for j in range(1) :
             arrayGame = [idGame, inputGame, inputKategori, inputTahunRilis, inputHarga, inputStok]
     
-    data_game += arrayGame
+    data_game += [arrayGame]
     return gameDs
-    
-if __name__ == "__main__":
-    TambahGame()
 

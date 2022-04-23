@@ -1,11 +1,10 @@
+# F03 - LOGIN
 import module as module
 
-# data_user = [['id', 'username', 'nama', 'password', 'role', 'saldo'], 
-#              ['1', 'raisya', 'raisyanath', '123', 'user', '100000'], 
-#              ['2', 'keanna', 'lunarchronne', '123', 'user', '100000']]
-
+# Current state bahwa role sebelum pengguna login adalah 'guest'
 binomoAccess = [None, None, None, None, 'guest', None]
 
+# Mencari apakah username yang di input merupakan username valid yang ada dalam data CSV
 def isUsernameAvail(inputUsername, data_user) :
     usernameAvail = 0
     for i in range(module.length(data_user)) :
@@ -19,6 +18,7 @@ def isUsernameAvail(inputUsername, data_user) :
     else :
         return False
 
+# Mencari apakah password yang dimasukkan valid terhadap username yang di input
 def isPasswordValid(inputUsername, inputPassword, data_user) :
 
     userTemp = []
@@ -26,22 +26,12 @@ def isPasswordValid(inputUsername, inputPassword, data_user) :
         if (data_user[i][1]) == inputUsername :
             userTemp = data_user[i]
 
-    # for i in data_user :
-    #     if i[3] == inputPassword :
-    #         passwordValid += 1
-    #     else :
-    #         pass
-
     if (inputPassword == userTemp[3]):
         return True
     else:
         return False
-    
-    # if passwordValid != 0 :
-    #     return True
-    # else :
-    #     return False
-
+  
+# Mencari id dari username yang diinput
 def searchLoginId(data_user, inputUsername):
     id = 0
     for i in range(module.length(data_user) ):
@@ -49,6 +39,7 @@ def searchLoginId(data_user, inputUsername):
             id = data_user[i][0]
     return int(id)
 
+# login user
 def login(data_user,binomoAccess) :
     inputUsername = input("Masukkan username : ")
     inputPassword = input("Masukkan password : ")
@@ -67,8 +58,3 @@ def login(data_user,binomoAccess) :
 
     binomoAccess = data_user[searchLoginId(data_user, inputUsername)]
     return binomoAccess
-
-# print(binomoAccess)
-# binomoAccess = login(data_user, binomoAccess)
-# print(binomoAccess)
-# # if (currentState[4] == "admin"):
