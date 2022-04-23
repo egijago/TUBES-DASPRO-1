@@ -23,4 +23,3 @@ def list_game_toko(store_mtrx):
         module.matrix_print(module.descend_sort(store_mtrx,3), [0,1,2,3,4,5])
     else:
         print('Skema sorting tidak valid')
-list_game_toko(store_data)
