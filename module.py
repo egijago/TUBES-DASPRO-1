@@ -31,15 +31,6 @@ def isInWord(string,word):
                 if string == newWord: return True
     return False
 
-# split string into character
-def split(string) :
-    newlist = []
-    for i in range(find(string)) :
-        if (string[i] != '') :
-            newlist += string[i]
-            i += 1
-    return newlist
-
 # csv to matrix 
 def read(file):
     # Fungsi read(csv)
