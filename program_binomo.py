@@ -73,7 +73,7 @@ def main():
                 elif cmd.lower() == ("list_game_toko") : 
                     list_game_toko(userDs)
                 elif cmd.lower() == ("buy_game"):
-                    kepemilikanDs , riwayatDs = buy_game(gameDs,kepemilikanDs,userDs,riwayatDs,userArr[0])
+                    userDs , kepemilikanDs , riwayatDs = buy_game(gameDs,kepemilikanDs,userDs,riwayatDs,userArr[0])
                 elif cmd.lower == ("list_game") : 
                     list_game(gameDs,kepemilikanDs,userDs)
                 elif cmd.lower() == ("search_my_game") : 
