@@ -25,9 +25,9 @@ def games_user_bought(store_mtrx, ownership_mtrx, user_id):
                     user_game_id += [store_idx]
                     store_idx = store_length
   
-    bought_game_by_user = [['' for i in range(5)]]
+    bought_game_by_user = []
     for store_idx in user_game_id:
-        bought_game_by_user += [store_mtrx[store_idx][0],store_mtrx[store_idx][1],store_mtrx[store_idx][2],store_mtrx[store_idx][3],store_mtrx[store_idx][4]]
+        bought_game_by_user += [[store_mtrx[store_idx][0],store_mtrx[store_idx][1],store_mtrx[store_idx][2],store_mtrx[store_idx][3],store_mtrx[store_idx][4]]]
     
     return bought_game_by_user
 
@@ -45,8 +45,8 @@ def list_game(store_mtrx, ownership_mtrx, user_id):
     bought_game = games_user_bought(store_mtrx, ownership_mtrx, user_id)
     bought_game_length = module.length(bought_game)
 
-    if bought_game_length == 1:
+    if bought_game_length == 0:
         print('Maaf, kamu belum membeli game. Ketik perintah beli_game untuk beli.')
     else:    
-        print('Daftar game:')
+        print('Daftar game:',end='')
         module.matrix_print(bought_game, [0,1,2,3,4])
