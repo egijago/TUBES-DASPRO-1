@@ -1,8 +1,6 @@
 # Spesifikasi Program F07 - Listing Game di Toko Berdasarkan ID, Tahun Rilis dan Harga
 import module
-store_data = [['GAME008','AC Unity','Adventure','2014','430000','0'],
-            ['GAME009','Elder Ring','Adventure','2022','861000','1'],
-            ['GAME008','GoW: Ragnarok','Adventure','2021','1000000','5']]
+
 def list_game_toko(store_mtrx):
     # Prosedur untuk list game di toko berdasarkan ID atau Tahun Rilis atau Harga
     # Input: store_mtrx       : array of array of str       ( Data dari file "game.csv" )
