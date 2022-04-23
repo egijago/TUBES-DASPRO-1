@@ -18,11 +18,12 @@ def isUsernameAvail(inputUsername, data_user) :
     else :
         return False
 
+
 def searchLoginId(data_user, inputUsername):
     id = 0
-    for i in range(module.length(data_user) - 1):
-        if (inputUsername == data_user[i + 1][2]):
-            id = data_user[i + 1][0]
+    for i in range(module.length(data_user) ):
+        if (inputUsername == data_user[i][1]):
+            id = data_user[i][0]
     return int(id)
 
 
