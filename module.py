@@ -152,7 +152,7 @@ def matrix_print(my_mtrx, header_list):
     # i, idx                                      : int   (untuk pengulangan)
 
     # ALGORITMA
-    game_name_char = max_length(my_mtrx, 1) # Maksimum karakter untuk nama game
+    # game_name_char = max_length(my_mtrx, 1) # Maksimum karakter untuk nama game
     category_char = max_length(my_mtrx, 2)  # Maksumum karakter untuk kategori
     price_char = max_length(my_mtrx, 4) # Maksimum karakter untuk harga
     mtrx_length = length(my_mtrx)
@@ -162,23 +162,26 @@ def matrix_print(my_mtrx, header_list):
         space_category = ''
         space_price = ''
 
-        for i in range(game_name_char - length(my_mtrx[elements_idx][1])):
-            space_game_name += ' '
+        # for i in range(game_name_char - length(my_mtrx[elements_idx][1])):
+        #     space_game_name += ' '
         for i in range(category_char - length(my_mtrx[elements_idx][2])):
             space_category += ' '
         for i in range(price_char - length(my_mtrx[elements_idx][4])):
             space_price += ' '
 
-        print(f'\n{elements_idx + 1}. {my_mtrx[elements_idx][header_list[0]]} ', end='')
+        print(f'\n{uni(str(elements_idx + 1),3)}. {my_mtrx[elements_idx][header_list[0]]} ', end='')
         for idx in header_list:
             if idx > 0:
-                print(f'| {my_mtrx[elements_idx][idx]}', end=' ')
                 if idx == 1:
+                    print(f"| {uni(my_mtrx[elements_idx][idx],40)}", end=" ")
                     print(space_game_name, end='')
-                elif idx == 2:
-                    print(space_category, end='')
-                elif idx == 4:
-                    print(space_price, end='')
+                else:
+                    print(f'| {my_mtrx[elements_idx][idx]}', end=' ')
+                    if idx == 2:
+                        print(space_category, end='')
+                    elif idx == 4:
+                        print(space_price, end='')
+    print()
 
 def uni(str,n):
     # Fungsi uni(str,n)
@@ -191,9 +194,23 @@ def uni(str,n):
     # ALGORITMA
     newStr=""
     if length(str) > n :
-        newStr = str[:n-3] + "..."
+        newStr = slice(str,0,n-3) + "..."
     else:
         newStr = str
         for i in range (n-length(str)):
             newStr+=' '
     return newStr
+
+def slice(word,start,end):
+    # Fungsi Slice
+    # Memotong string word dari index start sampai index end-1
+
+    # KAMUS LOKAL
+    # newWord       : str
+    # idx           : int
+
+    # ALGORITMA
+    newWord =""
+    for idx in range (start,end):
+        newWord+=word[idx]
+    return newWord

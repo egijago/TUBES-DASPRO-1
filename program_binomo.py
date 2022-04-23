@@ -30,6 +30,7 @@ def main():
     cmdUser = ["buy_game","list_game","search_my_game","riwayat"] 
     cmdGuest = ["login","help","exit"]  
     cmdAdminAndUser = ["login","list_game_toko","search_game_at_store","help","save","exit"]
+    cont = True
     while cont:
         kontinu = False
         cmd = input()
@@ -70,11 +71,11 @@ def main():
                 elif cmd.lower() == ("ubah_stok"):
                     gameDs = ubah_stok(gameDs)
                 elif cmd.lower() == ("list_game_toko") : 
-                    list_game_toko(userDs)
+                    list_game_toko(gameDs)
                 elif cmd.lower() == ("buy_game"):
                     userDs , kepemilikanDs , riwayatDs = buy_game(gameDs,kepemilikanDs,userDs,riwayatDs,userArr[0])
-                elif cmd.lower == ("list_game") : 
-                    list_game(gameDs,kepemilikanDs,userDs)
+                elif cmd.lower() == ("list_game") : 
+                    list_game(gameDs,kepemilikanDs,userArr[0])
                 elif cmd.lower() == ("search_my_game") : 
                     search_my_game(userArr,kepemilikanDs,gameDs)
                 elif cmd.lower() == ("search_game_at_store") : 

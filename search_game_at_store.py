@@ -81,6 +81,7 @@ def print_game(gameId,gameName,gamePrc,gameCtg,gameRls,gameDs):
     isNullPrc = gamePrc == ""
     isNullCtg = gameCtg == ""
     isNullRls = gameRls == ""
+    index = 1
     for [id,nama,kategori,tahun_rilis,harga,stok] in gameDs:
         if isNullId : gameId = id
         if isNullName  : gameName = nama
@@ -89,24 +90,11 @@ def print_game(gameId,gameName,gamePrc,gameCtg,gameRls,gameDs):
         if isNullRls  : gameRls = tahun_rilis
 
         if isInWord(gameId.lower(),id.lower()) and isInWord(gameName.lower(), nama.lower()) and isInWord(gamePrc.lower(),harga.lower()) and isInWord(gameCtg.lower(),kategori.lower()) and isInWord(gameRls.lower(),tahun_rilis.lower()):
-            print(f"{id} | {uni(nama,40)} | {uni(harga,8)} | {uni(kategori,11)} | {uni(tahun_rilis,4)} | {stok}") 
+            print(f"{uni(str(index),3)}. {id} | {uni(nama,40)} | {uni(harga,8)} | {uni(kategori,11)} | {uni(tahun_rilis,4)} | {stok}") 
+            index += 1
             isNothingPrinted = False
     return isNothingPrinted
-
-def slice(word,start,end):
-    # Fungsi Slice
-    # Memotong string word dari index start sampai index end-1
-
-    # KAMUS LOKAL
-    # newWord       : str
-    # idx           : int
-
-    # ALGORITMA
-    newWord =""
-    for idx in range (start,end):
-        newWord+=word[idx]
-    return newWord
-
+    
 def noSpace(word):
     # Fungsi No Space
     # Menghilangkan space pada string word
