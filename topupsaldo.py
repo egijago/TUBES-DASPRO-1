@@ -5,19 +5,18 @@ import module as module
 #              ['2', 'keanna', 'lunarchronne', '123', 'user', '100000']]
 
 
-def isUsernameAvail(inputUsername, data_user):
+def isUsernameAvail(inputUsername, data_user) :
     usernameAvail = 0
-    for i in data_user:
-        if i[2] == inputUsername:
+    for i in range(module.length(data_user)) :
+        if data_user[i][1] == inputUsername :
             usernameAvail += 1
-        else:
+        else :
             pass
-
-    if usernameAvail != 0:
+    
+    if usernameAvail != 0 :
         return True
-    else:
+    else :
         return False
-
 
 def searchLoginId(data_user, inputUsername):
     id = 0
