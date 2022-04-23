@@ -10,7 +10,10 @@ def isUsernameAvail(inputUsername, data_user) :
     # Mencari apakah username yang di input merupakan username valid yang ada dalam data CSV
     # Input : inputUsername     : str
     #         data_user         : array of array of str ( Data dari file "user.csv" )
-   
+    
+    # KAMUS LOKAL
+    # usernameAvail : int
+    
     # ALGORITMA
     # Mengecek apakah username sudah terpakai
     usernameAvail = 0
@@ -54,6 +57,9 @@ def searchLoginId(data_user, inputUsername):
     # Mencari id dari username yang diinput
     # Input : data_user         : array of array of str ( Data dari file "user.csv" )
     #         inputUsername     : str
+    
+    # KAMUS LOKAL
+    # id : int
     
     # ALGORITMA
     id = 0
