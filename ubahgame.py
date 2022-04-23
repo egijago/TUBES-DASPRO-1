@@ -24,16 +24,7 @@ def changeGame(gameDs) :
     inputHarga = input("Masukkan harga : ")
 
     while (isIdValid(gameId,data_game) == False) or module.length(gameId) == 0 :
-        # Apabila ID game yang diinput tidak valid (tidak terdapat pada file)
-        if (isIdValid(gameId,data_game) == False)  :
-            print("Tidak ada game dengan ID tersebut")
-            gameId = input("Masukkan ID game : ")
-            inputGame = input("Masukkan nama game : ")
-            inputKategori = input("Masukkan kategori : ")
-            inputTahunRilis = input("Masukkan tahun rilis : ")
-            inputHarga = input("Masukkan harga : ")
-            
-         # Apabila tidak memasukkan ID dari game yang ingin diubah
+        # Apabila tidak memasukkan ID dari game yang ingin diubah
         if module.length(gameId) == 0 :
             print("Mohon masukkan ID game untuk mengubah game")
             gameId = input("Masukkan ID game : ")
@@ -41,7 +32,14 @@ def changeGame(gameDs) :
             inputKategori = input("Masukkan kategori : ")
             inputTahunRilis = input("Masukkan tahun rilis : ")
             inputHarga = input("Masukkan harga : ")
-
+        # Apabila ID game yang diinput tidak valid (tidak terdapat pada file)
+        elif (isIdValid(gameId,data_game) == False)  :
+            print("Tidak ada game dengan ID tersebut")
+            gameId = input("Masukkan ID game : ")
+            inputGame = input("Masukkan nama game : ")
+            inputKategori = input("Masukkan kategori : ")
+            inputTahunRilis = input("Masukkan tahun rilis : ")
+            inputHarga = input("Masukkan harga : ")
             
     # Mengubah data game
     for i in range (module.length(data_game)) :

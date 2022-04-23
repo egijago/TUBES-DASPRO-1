@@ -37,7 +37,7 @@ def ubah_stok(game_stocks):
             game_stocks[chosen_game_idx][5] = curr_amount + amount
             print(f'Stok game {game_stocks[chosen_game_idx][1]} berhasil ditambah. Stok sekarang: {game_stocks[chosen_game_idx][5]}')
         else:
-            if amount >= curr_amount:
+            if -1*amount <= curr_amount:
                 game_stocks[chosen_game_idx][5] = str(curr_amount + amount)
                 print(f'Stok game {game_stocks[chosen_game_idx][1]} berhasil dikurangi. Stok sekarang: {game_stocks[chosen_game_idx][5]}')
             else:

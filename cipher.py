@@ -107,5 +107,3 @@ def decrypt(word,n,x):
 #     y = randint(1,100)
 #     print(encrypt("hello world",x,y))
 
-print(encrypt("123",3,7))
-
