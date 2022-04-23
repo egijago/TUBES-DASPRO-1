@@ -1,10 +1,18 @@
+# F12 - Top Up Saldo
+
 import module as module
 
-# data_user = [['id', 'username', 'nama', 'password', 'role', 'saldo'],
-#              ['1', 'raisyanath', 'raisya', '123', 'user', '100000'],
-#              ['2', 'lunarchronne', 'keanna', '123', 'user', '100000']]
-
 def isUsernameAvail(inputUsername, data_user) :
+    # Fungsi isUsernameAvail
+    # Mencari apakah username yang di input merupakan username valid yang ada dalam data CSV
+    # Input : inputUsername     : str
+    #         data_user         : array of array of str ( Data dari file "user.csv" )
+    
+    # KAMUS LOKAL
+    # usernameAvail : int
+    
+    # ALGORITMA
+    # Mengecek apakah username sudah terpakai
     usernameAvail = 0
     for i in range(module.length(data_user)) :
         if data_user[i][1] == inputUsername :
@@ -19,6 +27,15 @@ def isUsernameAvail(inputUsername, data_user) :
 
 
 def searchLoginId(data_user, inputUsername):
+    # Fungsi searchLoginId
+    # Mencari id dari username yang diinput
+    # Input : data_user         : array of array of str ( Data dari file "user.csv" )
+    #         inputUsername     : str
+    
+    # KAMUS LOKAL
+    # id : int
+    
+    # ALGORITMA
     id = 0
     for i in range(module.length(data_user) ):
         if (inputUsername == data_user[i][1]):
@@ -27,7 +44,16 @@ def searchLoginId(data_user, inputUsername):
 
 
 def isSaldoValid(inputUsername, inputSaldo, data_user):
+    # Fungsi isSaldoValid
+    # Mencari apakah saldo valid
+    # Input :  inputUsername     : str
+    #          inputSaldo        : int
+    #          data_user         : array of array of str ( Data dari file "user.csv" )
    
+    # KAMUS LOKAL
+    # SaldoFinalTemp : int
+    
+    # ALGORITMA
     SaldoFinalTemp = int(data_user[searchLoginId(
         data_user, inputUsername)][5]) + inputSaldo
     
@@ -38,17 +64,29 @@ def isSaldoValid(inputUsername, inputSaldo, data_user):
 
 
 def topUpSaldo(data_user): 
+    # Fungsi topUpSaldo
+    # Menambahkan / mengurangi saldo dari user sesuai dengan nominal yang diinput
+    # Input : data_user         : array of array of str ( Data dari file "user.csv" )
+    
+    # KAMUS LOKAL
+    # inputUsername : str
+    # inputSaldo    : int
+    
+    # ALGORITMA
     inputUsername = input("Masukkan username : ")
     inputSaldo = int(input("Masukkan saldo : "))
-
+    
+    # Apabila username tidak ditemukan
     if (not isUsernameAvail(inputUsername, data_user)):
         print(f'Username "{inputUsername}" tidak ditemukan.')
         return data_user
-
+    
+    # Apabila masukan saldo tidak valid
     if (not isSaldoValid(inputUsername, inputSaldo, data_user)):
         print(f"Masukan tidak valid")
         return data_user
-
+    
+    # Nilai akhir dari saldo user
     if (inputSaldo >= 0):
         statusTopup = "bertambah"
     else:
@@ -59,7 +97,3 @@ def topUpSaldo(data_user):
     print(
         f'Top up berhasil. Saldo {data_user[searchLoginId(data_user, inputUsername)][2]} {statusTopup} menjadi {data_user[searchLoginId(data_user, inputUsername)][5]}.')
     return data_user
-
-# print(f"Data user sebelum top up: {data_user}")
-# data_user = topUpSaldo(data_user)
-# print(f"Data user sesudah top up: {data_user}")

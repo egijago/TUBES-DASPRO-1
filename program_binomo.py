@@ -30,7 +30,6 @@ def main():
     cmdUser = ["buy_game","list_game","search_my_game","riwayat"] 
     cmdGuest = ["login","help","exit"]  
     cmdAdminAndUser = ["login","list_game_toko","search_game_at_store","help","save","exit"]
-    cont = True
     while cont:
         kontinu = False
         cmd = input()

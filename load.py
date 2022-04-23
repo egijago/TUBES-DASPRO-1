@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 from cipher import *
 from module import *
 
@@ -42,6 +43,8 @@ def load():
     # global userDs; global gameDs; global riwayatDs; global kepemilikanDs
     parser = argparse.ArgumentParser()
     parser.add_argument("dir", help="Directory name")
+    if length(sys.argv) == 1:
+        print('Tidak ada nama folder yang diberikan!')
     dir = parser.parse_args().dir
     path = str(os.getcwd()) + "\\" + dir
     if os.path.exists(dir):

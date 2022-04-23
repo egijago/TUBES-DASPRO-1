@@ -1,7 +1,7 @@
 import os
 from datetime import datetime, date
 from module import length
-from cipher import encrypt
+from cipher import encrypt , decrypt
 
 def func(time):
     # Fungsi func(time)
@@ -68,6 +68,9 @@ def save(userDs, gameDs, riwayatDs, kepemilikanDs):
                 f.write(string +"\n")
     print(f"Data telah disimpan dalam folder {dir}!")
     os.chdir("..")
+
+    # password pada matrix di decrypt kembali
+    for i in range (length(userDs)) :  userDs[i][3] = decrypt(userDs[i][3],3,7)
 
 if __name__ == "__main__":
     save()
