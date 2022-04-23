@@ -23,6 +23,7 @@ def ubah_stok(game_stocks):
     idx = 0
     chosen_game_idx = 0
 
+    # Search for game data in game matrix
     while not found and idx < num_of_games:
         if game_stocks[idx][0] == game_id:
             chosen_game_idx = idx
