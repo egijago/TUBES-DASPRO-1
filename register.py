@@ -1,12 +1,10 @@
+# F02 - REGISTER
 import module as module
 # from program_binomo import userDs
 # data_user = userDs
-# data_user = [['id', 'nama', 'username', 'password', 'role', 'saldo'], 
-#              ['1', 'raisya', 'raisyanath', '123', 'user', '100000'], 
-#              ['2', 'keanna', 'lunarchronne', '123', 'user', '100000']]
 
+# Registerasi pengguna baru
 def register(userDs) :
-    # global data_user
     data_user = userDs
     inputNama = str(input("Masukkan nama : "))
     inputUsername = str(input("Masukkan username: "))
@@ -33,6 +31,7 @@ def register(userDs) :
         print("Nama, username, dan password tidak boleh kosong. ")
     return data_user
 
+# Mengecek apakah username yang dimasukkan valid dan sesuai ketentuan yang ditetapkan
 def isUsernameValid(inputUsername) :
     validCharacters = ['A', 'a', 'B', 'b', 'C', 'c', 'D', 'd', 'E', 'e', 'F','f', 'G', 'g', 'H', 'h', 'I', 'i', 'J',
                         'j', 'K', 'k', 'L', 'l', 'M', 'm', 'N', 'n', 'O', 'o', 'P', 'p', 'Q', 'q', 'R', 'r', 'S', 's',
@@ -53,7 +52,7 @@ def isUsernameValid(inputUsername) :
     else :
         return False
 
-
+# Mengecek apakah username yang diinput oleh pengguna telah digunakan atau belum
 def isAlreadyUsed(inputUsername,data_user) :
     sameUsername = 0
     for i in data_user :
@@ -70,5 +69,3 @@ def isAlreadyUsed(inputUsername,data_user) :
 
 if __name__ == "__main__":
     register()
-# Register()
-# print(data_user)
