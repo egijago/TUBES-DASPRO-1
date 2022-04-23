@@ -1,8 +1,8 @@
 import module as module
 
-# data_user = [['id', 'nama', 'username', 'password', 'role', 'saldo'],
-#              ['1', 'raisya', 'raisyanath', '123', 'user', '100000'],
-#              ['2', 'keanna', 'lunarchronne', '123', 'user', '100000']]
+# data_user = [['id', 'username', 'nama', 'password', 'role', 'saldo'],
+#              ['1', 'raisyanath', 'raisya', '123', 'user', '100000'],
+#              ['2', 'lunarchronne', 'keanna', '123', 'user', '100000']]
 
 
 def isUsernameAvail(inputUsername, data_user) :
