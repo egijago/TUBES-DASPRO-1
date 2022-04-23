@@ -11,24 +11,26 @@ def register(userDs) :
     inputNama = str(input("Masukkan nama : "))
     inputUsername = str(input("Masukkan username: "))
     inputPassword = str(input("Masukkan password : "))
-
-    while True :
-        if not isUsernameValid(inputUsername) :
-            print(f'username hanya boleh mengandung alfabet A-Z atau a-z, underscore "_", strip "-", dan angka 0-9')
-            inputNama = str(input("Masukkan nama : "))
-            inputUsername = str(input("Masukkan username: "))
-            inputPassword = str(input("Masukkan password : "))
-        elif isAlreadyUsed(inputUsername,data_user) :
-            print(f'username {inputUsername} sudah terpakai, silakan menggunakan username lain')
-            inputNama = str(input("Masukkan nama : "))
-            inputUsername = str(input("Masukkan username: "))
-            inputPassword = str(input("Masukkan password : "))
-        else :
-            break
-    
-    id = module.length(data_user)
-    data_user = data_user + [id+1, inputNama, inputUsername, inputPassword, 'user', '0']
-    print(f'Username {inputUsername} telah berhasil register ke dalam "Binomo"')
+    if inputNama != "" and inputPassword != "" and inputUsername!='' :
+        while True :
+            if not isUsernameValid(inputUsername) :
+                print(f'username hanya boleh mengandung alfabet A-Z atau a-z, underscore "_", strip "-", dan angka 0-9')
+                inputNama = str(input("Masukkan nama : "))
+                inputUsername = str(input("Masukkan username: "))
+                inputPassword = str(input("Masukkan password : "))
+            elif isAlreadyUsed(inputUsername,data_user) :
+                print(f'username {inputUsername} sudah terpakai, silakan menggunakan username lain')
+                inputNama = str(input("Masukkan nama : "))
+                inputUsername = str(input("Masukkan username: "))
+                inputPassword = str(input("Masukkan password : "))
+            else :
+                break
+        
+        id = module.length(data_user)
+        data_user = data_user + [[str(id), inputUsername, inputNama, inputPassword, 'user', '0']]
+        print(f'Username {inputUsername} telah berhasil register ke dalam "Binomo"')
+    else:
+        print("Nama, username, dan password tidak boleh kosong. ")
     return data_user
 
 def isUsernameValid(inputUsername) :

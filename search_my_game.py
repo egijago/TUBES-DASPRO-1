@@ -33,7 +33,6 @@ def search_my_game(userArr, kepemilikanDs, gameDs):
     for game_id in owned: 
         for [id,nama,kategori,tahun_rilis,harga,stok] in gameDs:
             if game_id == id: 
-                print(game_id)
                 if isNullId : gameId = id
                 if isNullRls : gameRls = tahun_rilis
                 if gameId == id and gameRls == tahun_rilis:
