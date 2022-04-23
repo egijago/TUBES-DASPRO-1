@@ -4,7 +4,6 @@ import module as module
 #              ['1', 'raisyanath', 'raisya', '123', 'user', '100000'],
 #              ['2', 'lunarchronne', 'keanna', '123', 'user', '100000']]
 
-
 def isUsernameAvail(inputUsername, data_user) :
     usernameAvail = 0
     for i in range(module.length(data_user)) :
@@ -58,7 +57,7 @@ def topUpSaldo(data_user):
     data_user[searchLoginId(data_user, inputUsername)][5] = int(
         data_user[searchLoginId(data_user, inputUsername)][5]) + inputSaldo
     print(
-        f'Top up berhasil. Saldo {data_user[searchLoginId(data_user, inputUsername)][1]} {statusTopup} menjadi {data_user[searchLoginId(data_user, inputUsername)][5]}.')
+        f'Top up berhasil. Saldo {data_user[searchLoginId(data_user, inputUsername)][2]} {statusTopup} menjadi {data_user[searchLoginId(data_user, inputUsername)][5]}.')
     return data_user
 
 # print(f"Data user sebelum top up: {data_user}")
