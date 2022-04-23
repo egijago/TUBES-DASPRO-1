@@ -2,7 +2,7 @@
 import module
 from datetime import date
 
-def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id): # NOTE : Ini cara track perubahan stock gamenya bagi si admin gmn? (Ask later), kalau sudah di save nnti di store di file csv jadi bisa di cek admin 
+def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id):
     # Prosedur jika user ingin membeli game
     # Input : store_mtrx        : array of array of str     ( Data dari file "game.csv" )
     #         ownership_mtrx    : array of array of str     ( Data dari file "kepemilikan.csv" )
@@ -63,7 +63,6 @@ def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id): # NO
                 if int(store_mtrx[chosen_game_idx][4]) <= int(user_mtrx[chosen_user_idx][5]):
                     print(f'Game \"{store_mtrx[chosen_game_idx][1]}\" berhasil dibeli!')
 
-                    # NOTE: For the moment solution to solve stated problem in the first NOTE of this function. Change at later date
                     ownership_mtrx += [store_mtrx[chosen_game_idx][0],user_mtrx[chosen_user_idx][0]]
                     history_mtrx += [[store_mtrx[chosen_game_idx][0],store_mtrx[chosen_game_idx][1],store_mtrx[chosen_game_idx][4],user_mtrx[chosen_user_idx][0],current_year]]
                     store_mtrx[chosen_game_idx][5] = str(int(store_mtrx[chosen_game_idx][5]) - 1)
