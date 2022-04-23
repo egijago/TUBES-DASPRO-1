@@ -1,7 +1,15 @@
 # Spesifikasi Program F08 - Membeli Game
 import module
 from datetime import date
-
+store_data = [['GAME008','AC Unity','Adventure','2014','430000','0'],
+            ['GAME009','Elder Ring','Adventure','2022','861000','1'],
+            ['GAME010','GoW: Ragnarok','Adventure','2021','1000000','5']]
+owned_data = [['GAME009','USER001'],
+            ['GAME008','USER001'],
+            ['GAME008','USER002']]
+user_data = [['USER001','useruser','user01','pass01','user','1500000'],
+            ['USER002','user2user','user02','pass02','user2','400000']]
+history_data = [[]]
 def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id): # NOTE : Ini cara track perubahan stock gamenya bagi si admin gmn? (Ask later), kalau sudah di save nnti di store di file csv jadi bisa di cek admin 
     # Prosedur jika user ingin membeli game
     # Input : store_mtrx        : array of array of str     ( Data dari file "game.csv" )
@@ -19,46 +27,59 @@ def buy_game(store_mtrx, ownership_mtrx, user_mtrx, history_mtrx, user_id): # NO
     # chosen_game_idx, chosen_user_idx            : int
 
     # ALGORITMA
-    game_bought = input('Masukkan ID Game: ')   # ID Game yang dibeli
     current_year = str(date.today().year)
+    game_in_store = False
+
+    game_bought = input('Masukkan ID Game: ')   # ID Game yang dibeli
     
-    found = False
-    ownership_idx = 0
-    store_length = module.length(store_mtrx)
-    ownership_length = module.length(ownership_mtrx)
-    user_length = module.length(user_mtrx)
+    for games in store_mtrx:
+        if games[0] == game_bought:
+            print()
+            game_in_store = True
+            break
+    if game_in_store:
+        found = False
+        ownership_idx = 0
+        store_length = module.length(store_mtrx)
+        ownership_length = module.length(ownership_mtrx)
+        user_length = module.length(user_mtrx)
 
-    # Searching for specified games index in the store_mtrx
-    for games_idx in range(store_length):
-        if store_mtrx[games_idx][0] == game_bought:
-            chosen_game_idx = games_idx
-            games_idx = store_length    # Terminate loop
-    
-    # Searching if user already have the game or not
-    while not found and ownership_idx < ownership_length:
-        if ownership_mtrx[ownership_idx][0] == game_bought and ownership_mtrx[ownership_idx][1] == user_id:
-            found = True
-        ownership_idx += 1
+        # Searching for specified games index in the store_mtrx
+        for games_idx in range(store_length):
+            if store_mtrx[games_idx][0] == game_bought:
+                chosen_game_idx = games_idx
+                break    # Terminate loop
+        
+        # Searching if user already have the game or not
+        while not found and ownership_idx < ownership_length:
+            if ownership_mtrx[ownership_idx][0] == game_bought and ownership_mtrx[ownership_idx][1] == user_id:
+                found = True
+            ownership_idx += 1
 
-    # Searching for specified user index in the user_mtrx
-    for users_idx in range(user_length):
-        if user_mtrx[users_idx][0] == user_id:
-            chosen_user_idx = users_idx
-            users_idx = user_length
+        # Searching for specified user index in the user_mtrx
+        for users_idx in range(user_length):
+            if user_mtrx[users_idx][0] == user_id:
+                chosen_user_idx = users_idx
+                break
 
-    if store_mtrx[chosen_game_idx][5] == 0:
-        print('Stok game tersebut sedang habis!')
-    else:
-        if found:
-            print('Anda sudah memiliki Game tersebut')
+        if int(store_mtrx[chosen_game_idx][5]) == 0:
+            print('Stok game tersebut sedang habis!')
         else:
-            if store_mtrx[chosen_game_idx][4] <= user_mtrx[chosen_user_idx][5]:
-                print(f'Game \"{store_mtrx[chosen_game_idx][1]}\" berhasil dibeli!')
-
-                # NOTE: For the moment solution to solve stated problem in the first NOTE of this function. Change at later date
-                ownership_mtrx += [store_mtrx[chosen_game_idx][0],user_mtrx[chosen_user_idx][0]]
-                history_mtrx += [store_mtrx[chosen_game_idx][0],store_mtrx[chosen_game_idx][1],store_mtrx[chosen_game_idx][4],user_mtrx[chosen_user_idx][0],current_year]
+            if found:
+                print('Anda sudah memiliki Game tersebut')
             else:
-                print('Saldo anda tidak cukup untuk membeli Game tersebut')
+                if int(store_mtrx[chosen_game_idx][4]) <= int(user_mtrx[chosen_user_idx][5]):
+                    print(f'Game \"{store_mtrx[chosen_game_idx][1]}\" berhasil dibeli!')
 
-    return (ownership_mtrx,history_mtrx)
+                    # NOTE: For the moment solution to solve stated problem in the first NOTE of this function. Change at later date
+                    ownership_mtrx += [store_mtrx[chosen_game_idx][0],user_mtrx[chosen_user_idx][0]]
+                    history_mtrx += [store_mtrx[chosen_game_idx][0],store_mtrx[chosen_game_idx][1],store_mtrx[chosen_game_idx][4],user_mtrx[chosen_user_idx][0],current_year]
+                    store_mtrx[chosen_game_idx][5] = str(int(store_mtrx[chosen_game_idx][5]) - 1)
+                    user_mtrx[chosen_user_idx][5] = str(int(user_mtrx[chosen_user_idx][5]) - int(store_mtrx[chosen_game_idx][4]))
+                else:
+                    print('Saldo anda tidak cukup untuk membeli Game tersebut')
+    else:
+        print('ID Game yang dimasukkan salah (tidak ada di toko). Ketik \"list_game_toko\" untuk melihat game yang ada.\n')
+
+    return (user_mtrx,ownership_mtrx,history_mtrx)
+print(buy_game(store_data,owned_data,user_data,history_data,'USER001'))
