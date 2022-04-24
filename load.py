@@ -65,5 +65,3 @@ def load():
         sys.exit()
     return (userDs,gameDs,riwayatDs,kepemilikanDs)
 
-if __name__ == "__main__":
-    load()

@@ -45,6 +45,4 @@ def search_my_game(userArr, kepemilikanDs, gameDs):
             print("Tidak ada game pada inventory-mu yang memenuhi kriteria")
         else:
             print("Anda tidak memiliki game apapun di inventory. ")
-    
-if __name__ == "__main__":
-    search_my_game()
+ 

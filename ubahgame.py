@@ -81,5 +81,3 @@ def isIdValid(gameId,data_game) :
     else :
         return False
 
-if __name__ == "__main__":
-    changeGame()

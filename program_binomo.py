@@ -98,5 +98,4 @@ def main():
             print("Perintah salah, masukkan perintah \"help\"")
     exit(userDs, gameDs, riwayatDs, kepemilikanDs, userArr[4])
 
-if __name__ == "__main__":
-    main()
+main()

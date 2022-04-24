@@ -96,6 +96,3 @@ def isAlreadyUsed(inputUsername,data_user) :
     else :
         return False
 
-
-if __name__ == "__main__":
-    register()

@@ -15,5 +15,4 @@ def exit(userDs, gameDs, riwayatDs, kepemilikanDs, role):
                 save(userDs, gameDs, riwayatDs, kepemilikanDs)
             break
             
-if __name__ == "__main__":
-    exit()
+
