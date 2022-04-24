@@ -29,11 +29,11 @@ def main():
     cmdAdmin = ["register","tambah_game","ubah_game","ubah_stok","topup"]
     cmdUser = ["buy_game","list_game","search_my_game","riwayat"] 
     cmdGuest = ["login","help","exit"]  
-    cmdAdminAndUser = ["login","list_game_toko","search_game_at_store","help","save","exit"]
+    cmdAdminAndUser = ["login","list_game_toko","search_game_at_store","help","save","exit","kerangajaib","tictactoe"]
     cont = True
     while cont:
         kontinu = False
-        cmd = input()
+        cmd = input(">> ")
         if isInArr(cmd,cmdAdmin) or isInArr(cmd,cmdUser) or isInArr(cmd,cmdAdminAndUser):
             if userArr[4] == "guest":
                 if isInArr(cmd,cmdGuest) : kontinu = True
@@ -41,7 +41,7 @@ def main():
                     print("Maaf, anda harus login terlebih dahulu untuk mengirim perintah selain \"login\"")
                     cc = input("Apakah Anda mempunyai akun? (y/n) ")
                     if cc.lower() == 'y':
-                        print("Silakan login terlebih dahulu. ")
+                        print("Silakan login terlebih dahulu dengan memasukkan perintah login. ")
                     elif cc.lower() == 'n':
                         print("Silakan hubungi Admin untuk registrasi. ")
                     else:

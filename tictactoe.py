@@ -84,10 +84,10 @@ def tic_tac_toe():
     # ALGORITMA
     
     play_again = True               # Cek players ingin bermain lagi atau tidak
-    turn = 1                        # Menghitung banyak turn yang sudah lewat
     max_turn = 9                    # Variabel konstan jumlah turn maksimum
 
     while play_again:
+        turn = 1                    # Menghitung banyak turn yang sudah lewat
         is_win = False              # Cek sudah ada yang menang atau belum
         is_board_full = False       # Cek board game sudah penuh dengan isi player
 
@@ -124,7 +124,7 @@ O Pemain 2 \n''')
                     print_board(board_mtrx)
                     is_input_valid = True
 
-            if turn == max_turn:    # Cek turn sudah maksimum atau belum tapi board belum full
+            if turn == max_turn and check_win(board_mtrx) == 'No':    # Cek turn sudah maksimum atau belum tapi board belum full
                 print('DRAW!! No one wins.')
                 is_board_full = True
             else: # Turn belum maksimum

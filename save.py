@@ -33,7 +33,6 @@ def save(userDs, gameDs, riwayatDs, kepemilikanDs):
     
     # ALGORITMA
     ds = ["game","kepemilikan","riwayat","user"]
-
     # input nama directory tempat penyimpanan file
     dir = input("Masukkan nama folder penyimpanan: ")
     # jika input directory kosong, nama file merupakan waktu melakukan pengesavean
