@@ -3,23 +3,25 @@
 
 <p>&nbsp;</p>
 
+
+ANJAY KELAR
 ## Checkpoint
 
 
 * [Laporan](https://docs.google.com/document/d/1s_UySRMJrCrNWzUU9hruQbcqs4HriJKP2vFcl5C6KOU/edit?usp=sharing)
-* F01 Dekomposisi, Abstraksi...
+* F01 Dekomposisi, Abstraksi... (done)
 * F02 register (done)
 * F03 login (done)
 * F04 tambah_game (done)
 * F05 ubah_game (done)
-* F06 ubah_stok (on-progress)
+* F06 ubah_stok (done)
 * F07 list_game_toko (on-progress)
-* F08 buy_game (on-progress)
-* F09 list_game (on-progress)
+* F08 buy_game (done)
+* F09 list_game (done)
 * F10 search_my_game (done)
 * F11 search_game_at_store (done)
 * F12 topup (done)
-* F13 riwayat (on-progress)
+* F13 riwayat (done)
 * F14 help (done)
 * F15 load (done)
 * F16 save (done)
