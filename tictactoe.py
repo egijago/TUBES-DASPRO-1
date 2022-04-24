@@ -153,4 +153,4 @@ O Pemain 2 \n''')
                     print('\n=============================')
                     print('Let\'s play again!!\n')
             else:
-                print('Please input (y/x)!\n')
+                print('Please input (y/n)!\n')
