@@ -61,6 +61,7 @@ def load():
         os.chdir("..")
     else:
         print("Folder \""+ str(dir) +"\" tidak ditemukan.")
+        sys.exit()
     return (userDs,gameDs,riwayatDs,kepemilikanDs)
 
 if __name__ == "__main__":

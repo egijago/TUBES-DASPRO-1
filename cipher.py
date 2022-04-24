@@ -45,7 +45,7 @@ def encrypt(word,n,x):
 
     # ALGORITMA
     global Arr
-    newArr = Arr[n%length(Arr):length(Arr)]+Arr[:n%length(Arr)]
+    newArr = slice(Arr,n%length(Arr),length(Arr))+slice(Arr,0,n%length(Arr))
     ord = []
     for i in range (length(word)):
         ord += [int(x) * i + findOrd(word[i],newArr)]
@@ -53,7 +53,7 @@ def encrypt(word,n,x):
     newWord = ''
     for i in ord: 
         newWord += findChar(i,Arr)
-    newWord = newWord[n%length(newWord):length(newWord)] + newWord[:n%length(newWord)]
+    newWord = slice(newWord,n%length(newWord),length(newWord)) + slice(newWord,0,n%length(newWord))
     return newWord
 
 def decrypt(word,n,x): 
@@ -67,8 +67,8 @@ def decrypt(word,n,x):
 
     # ALGORITMA
     global Arr
-    newArr = Arr[n%length(Arr):length(Arr)]+Arr[:n%length(Arr)]
-    word = word[length(word)-n%length(word):length(word)] + word[:length(word)-n%length(word)]
+    newArr = slice(Arr,n%length(Arr),length(Arr))+ slice(Arr,0,n%length(Arr))
+    word = slice(word,length(word)-n%length(word),length(word)) + slice(word,0,length(word)-n%length(word))
     ord = []
     for i in range (length(word)) : 
         ord+= [findOrd(word[i],Arr) - int(x) * i ]
