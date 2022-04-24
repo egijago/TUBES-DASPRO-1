@@ -45,6 +45,7 @@ def load():
     parser.add_argument("dir", help="Directory name")
     if length(sys.argv) == 1:
         print('Tidak ada nama folder yang diberikan!')
+        sys.exit()
     dir = parser.parse_args().dir
     path = str(os.getcwd()) + "\\" + dir
     if os.path.exists(dir):

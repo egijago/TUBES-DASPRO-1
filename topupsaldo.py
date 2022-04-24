@@ -74,7 +74,13 @@ def topUpSaldo(data_user):
     
     # ALGORITMA
     inputUsername = input("Masukkan username : ")
-    inputSaldo = int(input("Masukkan saldo : "))
+    while True:
+        try : 
+            inputSaldo = int(input("Masukkan saldo : "))
+            break
+        except ValueError:
+            print("Saldo harus berupa integer. ")
+
     
     # Apabila username tidak ditemukan
     if (not isUsernameAvail(inputUsername, data_user)):
@@ -92,8 +98,8 @@ def topUpSaldo(data_user):
     else:
         statusTopup = "berkurang"
 
-    data_user[searchLoginId(data_user, inputUsername)][5] = int(
-        data_user[searchLoginId(data_user, inputUsername)][5]) + inputSaldo
+    data_user[searchLoginId(data_user, inputUsername)][5] = str(int(
+        data_user[searchLoginId(data_user, inputUsername)][5]) + inputSaldo)
     print(
         f'Top up berhasil. Saldo {data_user[searchLoginId(data_user, inputUsername)][2]} {statusTopup} menjadi {data_user[searchLoginId(data_user, inputUsername)][5]}.')
     return data_user
