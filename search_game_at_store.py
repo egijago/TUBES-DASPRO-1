@@ -19,11 +19,11 @@ def search_game_at_store(gameDs):
 
     # ALGORITMA
     # input parameter
-    gameId = input("Masukkan ID Game: ")
-    gameName = input("Masukkan Nama Game: ")
-    gamePrc = input("Masukkan Harga Game: ")
-    gameCtg = input("Masukkan Kategori Game: ")
-    gameRls = input("Masukkan Tahun Rilis Game: ")
+    gameId = input("Masukkan ID Game: ").lower()
+    gameName = input("Masukkan Nama Game: ").lower()
+    gamePrc = input("Masukkan Harga Game: ").lower()
+    gameCtg = input("Masukkan Kategori Game: ").lower()
+    gameRls = input("Masukkan Tahun Rilis Game: ").lower()
 
     # print data sesuai parameter jika ada
     isNothingPrinted = print_game(gameId,gameName,gamePrc,gameCtg,gameRls,gameDs)
